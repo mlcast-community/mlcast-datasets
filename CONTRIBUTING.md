@@ -11,6 +11,7 @@ Below follows a list of the general steps for preparing a new dataset for sharin
 1. Convert your dataset to zarr format. For this you will likely need tools like [xarray](https://docs.xarray.dev/en/stable/) and [kerchunk](https://github.com/fsspec/kerchunk). There is an example for the radklim dataset in https://github.com/mlcast-community/mlcast-dataset-radklim. Check-list for zarr datasets:
    - The dataset should be in zarr format
    - The dataset should follow [CF conventions](https://cfconventions.org/), including [setting the projection information](https://cfconventions.org/cf-conventions/cf-conventions.html#use-of-the-crs-well-known-text-format) in the attributes of the dataset.
+   - You can validate your dataset using the [mlcast-sourcedata-validator](https://github.com/mlcast-community/mlcast-sourcedata-validator) tool to ensure it meets the required specifications before uploading.
 
 
 2. Copy your zarr dataset to our European Weather Cloud S3-compatible bucket storage. There are a number of tools available for this, a quite fast command line tool is [s5cmd](https://github.com/peak/s5cmd) which supports both custom server endpoints (which we need since we use the S3 store on EWC rather than Amazon S3) and parallel uploads. The command use for uploading radklim was:
