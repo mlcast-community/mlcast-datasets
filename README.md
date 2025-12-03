@@ -1,5 +1,7 @@
 # MLCast Community intake catalog
 
+<!-- SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause -->
+
 [![data-availability-check](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/data_availability_check.yml/badge.svg)](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/data_availability_check.yml) [![linting](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/pre-commit.yml) [![Jupyter Book Badge](https://raw.githubusercontent.com/jupyter-book/jupyter-book/next/docs/media/images/badge.svg)](https://mlcast-community.github.io/mlcast-datasets/)
 
 Hi! 👋
@@ -101,3 +103,14 @@ Start using the dataset 🙂
 ## Contributing
 
 We are always looking for new datasets to add to the catalog. If you have a dataset you would like to contribute, please open an issue or a pull request.
+
+## License
+
+This project is dual-licensed under either:
+
+* Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+* BSD 3-Clause License ([LICENSE-BSD](LICENSE-BSD) or https://opensource.org/licenses/BSD-3-Clause)
+
+at your option.
+
+See [LICENSE](LICENSE) for more details.

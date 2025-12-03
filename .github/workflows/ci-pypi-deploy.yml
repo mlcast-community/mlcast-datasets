@@ -20,6 +20,8 @@ jobs:
           fetch-depth: 0           # Fetch full history including tags
           fetch-tags: true         # Explicitly ensure tags are fetched, we need this for setuptools_scm to get the version correctly
       - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
       - uses: casperdcl/deploy-pypi@v2
         with:
           password: ${{ secrets.PYPI_TOKEN }}
