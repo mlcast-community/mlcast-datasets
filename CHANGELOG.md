@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Maintenance
 
-- Fix jupyter book badge in README [\#18](https://github.com/mlcast-community/mlcast-datasets/pull/18), @leifdenby
+- Fix jupyter book badge in README and update black with pre-commit to fix ci [\#18](https://github.com/mlcast-community/mlcast-datasets/pull/18), @leifdenby
 
 ## [v0.1.1](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.1.1) - 2025-01-03
 
