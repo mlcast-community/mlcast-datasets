@@ -1,6 +1,6 @@
 # MLCast Community intake catalog
 
-[![data-availability-check](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/data_availability_check.yml/badge.svg)](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/data_availability_check.yml) [![linting](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/pre-commit.yml) [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://mlcast-community.github.io/mlcast-datasets/)
+[![data-availability-check](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/data_availability_check.yml/badge.svg)](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/data_availability_check.yml) [![linting](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/mlcast-community/mlcast-datasets/actions/workflows/pre-commit.yml) [![Jupyter Book Badge](https://raw.githubusercontent.com/jupyter-book/jupyter-book/next/docs/media/images/badge.svg)](https://mlcast-community.github.io/mlcast-datasets/)
 
 Hi! 👋
 
