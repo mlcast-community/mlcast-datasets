@@ -22,3 +22,13 @@ sources:
       storage_options:
         anon: true
         endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
+  dmi_10_minutes:
+    description : "DMI (Danmarks Meteorologiske Institute) 10-Minute radar reflectivity data "
+    driver: zarr
+    args:
+      urlpath: "s3://mlcast-source-datasets/radar_precipitation/denmark/v0.1.0/10_minutes.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
+        endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
