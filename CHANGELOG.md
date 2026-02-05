@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/mlcast-community/mlcast-datasets)
 
+### Added
+- Danish radar precipitation dataset covering 2016-2025 at 10min, 0.5km resolution, [\#21](https://github.com/mlcast-community/mlcast-datasets/pull/21), @arjj8
+
 ### Maintenance
 
 - Fix jupyter book badge in README and update black with pre-commit to fix ci [\#18](https://github.com/mlcast-community/mlcast-datasets/pull/18), @leifdenby
