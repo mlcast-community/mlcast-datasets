@@ -37,7 +37,7 @@ notebooks = [
     "matplotlib>=3.10.1",
 ]
 docs = [
-    "jupyter-book>=1.0.4.post1",
+    "jupyter-book>=1.0.4.post1,<2",
     "sphinxcontrib-mermaid>=1.0.0",
 ]
 
