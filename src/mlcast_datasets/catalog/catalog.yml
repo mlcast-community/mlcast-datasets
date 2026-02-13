@@ -6,7 +6,7 @@ metadata:
 
 sources:
   precipitation:
-    description: "Precipitation-related datasets from RADKLIM and other sources"
+    description: "Precipitation-related datasets from RADKLIM, IT-DPC and other sources"
     driver: intake.catalog.local.YAMLFileCatalog
     args:
       path: "{{ CATALOG_DIR }}/precipitation/catalog.yml"
