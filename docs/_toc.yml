@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: radklim_precipitation
 - file: dmi_precipitation
+- file: it_dpc_precipitation
