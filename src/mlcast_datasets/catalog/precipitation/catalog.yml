@@ -33,7 +33,7 @@ sources:
         anon: true
         endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
 
-  it_dpc_sri:
+  it_dpc_sri_5min:
     description: "Italian Radar Surface Rainfall Intensity (SRI) from Dipartimento Protezione Civile (DPC), hosted on ECMWF S3"
     driver: zarr
     args:
