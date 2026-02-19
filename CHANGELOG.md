@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/mlcast-community/mlcast-datasets)
 
 ### Added
+- UK Met Office C-band rain radar 1 km composite (2005-2025, 5min, OSGB 1 km) [\#17](https://github.com/mlcast-community/mlcast-datasets/issues/17), @franchg
 - Danish radar precipitation dataset covering 2016-2025 at 10min, 0.5km resolution, [\#21](https://github.com/mlcast-community/mlcast-datasets/pull/21), @arjj8
 - Italian DPC SRI radar precipitation dataset (2010-2025, 1km, 5min) [\#14](https://github.com/mlcast-community/mlcast-datasets/issues/14), @franchg
 

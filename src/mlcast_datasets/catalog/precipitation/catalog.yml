@@ -42,3 +42,13 @@ sources:
       storage_options:
         anon: true
         endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
+  uk_metoffice_5min:
+    description: "UK Met Office C-band rain radar 1 km composite (5-min, OSGB 1 km), hosted on ECMWF S3"
+    driver: zarr
+    args:
+      urlpath: "s3://mlcast-source-datasets/UK-METOFFICE-RADAR/v0.1.0/uk-metoffice-c-band-rain-radar.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
+        endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
