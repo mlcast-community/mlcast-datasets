@@ -76,25 +76,30 @@ dataset:
 >> ds = cat.precipitation.radklim_5_minutes.to_dask()
 >> ds
 <xarray.Dataset> Size: 10TB
-Dimensions:  (time: 2419200, y: 1100, x: 900)
+Dimensions:          (time: 2419200, y: 1100, x: 900)
 Coordinates:
-    lat      (y, x) float64 8MB dask.array<chunksize=(1100, 900), meta=np.ndarray>
-    lon      (y, x) float64 8MB dask.array<chunksize=(1100, 900), meta=np.ndarray>
-  * time     (time) datetime64[ns] 19MB 2001-01-01 ... 2023-12-31T23:55:00
-  * x        (x) float64 7kB -443.0 -442.0 -441.0 -440.0 ... 454.0 455.0 456.0
-  * y        (y) float64 9kB -4.758e+03 -4.757e+03 ... -3.66e+03 -3.659e+03
+  * time             (time) datetime64[ns] 19MB 2001-01-01 ... 2023-12-31T23:...
+  * y                (y) float64 9kB -4.758e+03 -4.757e+03 ... -3.659e+03
+  * x                (x) float64 7kB -443.0 -442.0 -441.0 ... 454.0 455.0 456.0
+    lat              (y, x) float64 8MB dask.array<chunksize=(1100, 900), meta=np.ndarray>
+    lon              (y, x) float64 8MB dask.array<chunksize=(1100, 900), meta=np.ndarray>
 Data variables:
-    RR       (time, y, x) float32 10TB dask.array<chunksize=(1, 1100, 900), meta=np.ndarray>
-    crs      float64 8B ...
-Attributes:
-    Author:                Harald Rybka, Katharina Lengfeld
-    Conventions:           CF-1.6
-    history:               Created at 2021-07-09 09:10:06.385653
-    institution:           Deutscher Wetterdienst (DWD)
-    reference:             10.5676/DWD/RADKLIM_YW_V2017.002
-    title:                 RADKLIM - radar-based precipitation climatology
-    zarr_creation:         created with mlcast_dataset_radklim (https://githu...
-    zarr_dataset_version:  0.1.0
+    rainfall_amount  (time, y, x) float32 10TB dask.array<chunksize=(1, 1100, 900), meta=np.ndarray>
+    crs              float64 8B ...
+Attributes: (12/13)
+    Author:                            Harald Rybka, Katharina Lengfeld
+    Conventions:                       CF-1.6
+    history:                           Created at 2021-07-09 09:10:06.385653
+    institution:                       Deutscher Wetterdienst (DWD)
+    reference:                         10.5676/DWD/RADKLIM_YW_V2017.002
+    title:                             RADKLIM - radar-based precipitation cl...
+    ...                                ...
+    mlcast_created_on:                 2026-02-27T12:03:00
+    mlcast_created_by:                 Leif Denby <lcd@dmi.dk>
+    mlcast_created_with:               https://github.com/mlcast-community/ml...
+    mlcast_dataset_version:            0.1.1
+    mlcast_dataset_identifier:         DE-DWD-radar_precipitation-RADKLIM
+    mlcast_dataset_identifier_format:  {country_code}-{entity}-{physical_vari...
 ```
 
 Start using the dataset 🙂
