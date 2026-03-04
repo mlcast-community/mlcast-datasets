@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- For DWD-DE-radklim dataset fix meta-information to match mlcast-validator requirements and rename `RR` field to `rainfall_amount` to be consistent with the units and standard name used [\#33](https://github.com/mlcast-community/mlcast-datasets/pull/33), @leifdenby
+- Update DWD-DE-radklim dataset (`v0.1.1`) that fixes meta-information to match mlcast-validator requirements and rename `RR` field to `rainfall_amount` to be consistent with the units and standard name used [\#33](https://github.com/mlcast-community/mlcast-datasets/pull/33), @leifdenby
 
 
 ## [v0.1.1](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.1.1) - 2025-01-03
