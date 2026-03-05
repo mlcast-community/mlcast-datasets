@@ -27,7 +27,7 @@ sources:
     description : "DMI (Danmarks Meteorologiske Institute) 10-Minute radar reflectivity data "
     driver: zarr
     args:
-      urlpath: "s3://mlcast-source-datasets/dmi/v0.1.0/dmi_10_minutes.zarr/"
+      urlpath: "s3://mlcast-source-datasets/dmi/v0.1.1/dmi_10_minutes.zarr/"
       consolidated: true
       storage_options:
         anon: true
