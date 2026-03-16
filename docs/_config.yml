@@ -41,5 +41,9 @@ html:
   use_repository_button: true
 
 sphinx:
+  config:
+    copyright: ""
+  local_extensions:
+    copyright_year_sphinxext: utils
   extra_extensions:
     - sphinxcontrib.mermaid
