@@ -10,15 +10,17 @@ on:
     branches:
     - master
     - main
+    types: [opened, synchronize, reopened, closed]
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+  pull-requests: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -31,8 +33,10 @@ jobs:
   deploy-book:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pages: write
       id-token: write
+      pull-requests: write
     steps:
     - uses: actions/checkout@v4
       with:
@@ -44,6 +48,7 @@ jobs:
 
     # Build the book
     - name: Build the book
+      if: github.event.action != 'closed'
       run: |
         # install package with dependencies and editable version of our package
         # so that it is available in the venv
@@ -65,3 +70,11 @@ jobs:
       if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
       id: deployment
       uses: actions/deploy-pages@v4
+
+    # Deploy the PR Preview to GitHub Pages
+    # Only run on pull requests. On 'closed' events, it will clean up the preview instead.
+    - name: Deploy PR Preview to GitHub Pages
+      if: github.event_name == 'pull_request'
+      uses: rossjrw/pr-preview-action@v1
+      with:
+        source-dir: docs/_build/html/
