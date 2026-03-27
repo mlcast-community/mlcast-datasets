@@ -53,11 +53,11 @@ sources:
         anon: true
         endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
 
-  be_rmi_radclim_5min:
-    description: "RMI (Royal Meteorological Institute of Belgium) RADCLIM 1 km radar-rain-gauge merged rain rate (5-min, Belgian Lambert EPSG:3812), hosted on ECMWF S3"
+  be_rmi_radclim_mfb_5min:
+    description: "RMI (Royal Meteorological Institute of Belgium) RADCLIM 1 km radar-rain-gauge merged rain rate with mean-field bias (MFB) correction (5-min, Belgian Lambert EPSG:3812), hosted on ECMWF S3"
     driver: zarr
     args:
-      urlpath: "s3://mlcast-source-datasets/radar_precipitation/BE-RMI-radclim/v1.0.0/5_minutes.zarr/"
+      urlpath: "s3://mlcast-source-datasets/radar_precipitation/BE-RMI-radclim-mfb/v0.1.1/5_minutes.zarr/"
       consolidated: true
       storage_options:
         anon: true
