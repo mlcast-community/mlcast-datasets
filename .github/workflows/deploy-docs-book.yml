@@ -1,8 +1,12 @@
 name: build-docs
 
-# Run this when the master or main branch changes
+# Run this when the master or main branch changes, or on PRs to those branches
 on:
   push:
+    branches:
+    - master
+    - main
+  pull_request:
     branches:
     - master
     - main
@@ -48,12 +52,16 @@ jobs:
         LOGURU_LEVEL=WARNING uv run --all-groups jupyter-book build docs/
 
     # Upload the book's HTML as an artifact
+    # Only run on push (which happens when PRs are merged or direct commits are made to main/master) or manual dispatch
     - name: Upload artifact
+      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
       uses: actions/upload-pages-artifact@v3
       with:
         path: "docs/_build/html"
 
     # Deploy the book's HTML to GitHub Pages
+    # Only run on push (which happens when PRs are merged or direct commits are made to main/master) or manual dispatch
     - name: Deploy to GitHub Pages
+      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
       id: deployment
       uses: actions/deploy-pages@v4
