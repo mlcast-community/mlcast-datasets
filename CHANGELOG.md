@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased](https://github.com/mlcast-community/mlcast-datasets)
+
+### Added
+
+- Belgian RADCLIM radar precipitation dataset covering 2017-2023 at 5min, 1km resolution [\#26](https://github.com/mlcast-community/mlcast-datasets/issues/26)
 ## [v0.2.0](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.2.0) - 2026-03-17
 
 This release includes three new radar precipitation datasets from the UK, Denmark, and Italy, as well as several maintenance updates to ensure all datasets in the catalog pass validation checks and to fix some rendering issues in the documentation.
