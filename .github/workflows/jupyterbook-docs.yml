@@ -1,3 +1,18 @@
+# ==============================================================================
+# WORKFLOW: docs (Build & Main Deploy)
+#
+# WHEN IT RUNS:
+# - On pushes to `main` or `master` branches.
+# - On pull requests targeting `main` or `master` (opened, synchronized, closed).
+# - Manually via workflow_dispatch.
+#
+# WHAT IT DOES:
+# 1. On PRs: Safely builds the Jupyter Book in a read-only context (safe for forks)
+#    and uploads the built HTML and PR metadata as artifacts for the
+#    "Deploy PR Preview" workflow to process later.
+# 2. On Pushes to main/master: Builds the Jupyter Book and directly deploys
+#    it to the production GitHub Pages environment.
+# ==============================================================================
 name: docs
 
 # Run this when the master or main branch changes, or on PRs to those branches

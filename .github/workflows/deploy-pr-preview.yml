@@ -1,3 +1,18 @@
+# ==============================================================================
+# WORKFLOW: Deploy PR Preview
+#
+# WHEN IT RUNS:
+# - Automatically triggered *after* the "docs" workflow completes.
+#
+# WHAT IT DOES:
+# This is the "trusted" part of the PR preview process, allowing us to safely
+# deploy previews for PRs originating from forks without hitting 403 Forbidden errors.
+# 1. Runs in the privileged context of the base repository.
+# 2. Downloads the built HTML and PR metadata artifacts from the "docs" run.
+# 3. If the PR is open/updated: Deploys the preview to the `gh-pages` branch
+#    and posts a comment with the link on the PR.
+# 4. If the PR is closed: Removes the preview folder from the `gh-pages` branch.
+# ==============================================================================
 name: Deploy PR Preview
 
 on:
