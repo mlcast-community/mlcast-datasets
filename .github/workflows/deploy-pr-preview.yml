@@ -62,7 +62,7 @@ jobs:
       with:
         source-dir: docs/_build/html/
         preview-branch: gh-pages
-        pr-id: ${{ env.pr_number }}
+        pr-number: ${{ env.pr_number }}
         action: deploy
 
     - name: Remove PR Preview
@@ -71,5 +71,5 @@ jobs:
       with:
         source-dir: .
         preview-branch: gh-pages
-        pr-id: ${{ env.pr_number }}
+        pr-number: ${{ env.pr_number }}
         action: remove
