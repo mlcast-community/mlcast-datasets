@@ -78,6 +78,7 @@ jobs:
         header: pr-preview
         message: |
           View preview of built jupyterbooks on https://mlcast-community.github.io/mlcast-datasets/pr-preview/pr-${{ env.pr_number }}/
+          (preview is automatically rebuilt and uploaded on later commits)
 
     - name: Remove PR Preview
       if: env.action == 'closed'
