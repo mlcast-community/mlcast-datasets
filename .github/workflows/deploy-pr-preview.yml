@@ -64,6 +64,23 @@ jobs:
         preview-branch: gh-pages
         pr-number: ${{ env.pr_number }}
         action: deploy
+        # We disable the built-in comment because it doesn't use the pr-number provided
+        # but instead expects the github action provided PR number, which isn't set
+        # because this is a `workflow_run` event.
+        comment: false
+
+    # We use a standalone step to comment so we can explicitly pass the extracted PR number.
+    - name: Comment PR Preview Link
+      if: env.action != 'closed' && github.event.workflow_run.conclusion == 'success'
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        number: ${{ env.pr_number }}
+        header: pr-preview
+        message: |
+          [PR Preview Action](https://github.com/rossjrw/pr-preview-action)
+
+          :rocket: View preview at
+          https://mlcast-community.github.io/mlcast-datasets/pr-preview/pr-${{ env.pr_number }}/
 
     - name: Remove PR Preview
       if: env.action == 'closed'
