@@ -77,10 +77,7 @@ jobs:
         number: ${{ env.pr_number }}
         header: pr-preview
         message: |
-          [PR Preview Action](https://github.com/rossjrw/pr-preview-action)
-
-          :rocket: View preview at
-          https://mlcast-community.github.io/mlcast-datasets/pr-preview/pr-${{ env.pr_number }}/
+          View preview of built jupyterbooks on https://mlcast-community.github.io/mlcast-datasets/pr-preview/pr-${{ env.pr_number }}/
 
     - name: Remove PR Preview
       if: env.action == 'closed'
