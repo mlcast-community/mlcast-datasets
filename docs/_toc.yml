@@ -8,3 +8,4 @@ chapters:
 - file: dmi_precipitation
 - file: it_dpc_precipitation
 - file: uk_metoffice_precipitation
+- file: be_rmi_precipitation
