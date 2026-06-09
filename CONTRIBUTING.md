@@ -41,4 +41,6 @@ Below follows a list of the general steps for preparing a new dataset for sharin
 
 6. Create a pull-request for your change to the main repository. Please make sure to include a description of your changes and any relevant information about the dataset you are adding. If you have added a new dataset, please include a link to the dataset in the description.
 
+7. Upload a repository to the mlcast-community (https://github.com/mlcast-community) that demonstrates how to download the raw data (if it is open data) and how to transform the raw data into zarr format. You need to join the mlcast-community organization before uploading. Yo can request an invitation by sending an email to mlcast.community@gmail.com or by contacting one of the existing contributors.
+
 Thanks in advance for you contribution!
