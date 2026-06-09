@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Documentation
 - Add step 7 to CONTRIBUTING.md requiring contributors to create and upload an example repository to mlcast-community, demonstrating how to download data from their organization, transform it into Zarr format, and request an invitation to join the community in order to publish their repository
-  
+
 ## [v0.3.0](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.3.0)
 
 This release includes a new radar precipitation dataset from Belgium, as well as the addition of JupyterBook build checks and live preview deployments to all pull requests to ensure that documentation changes are properly rendered and reviewed before being merged.
