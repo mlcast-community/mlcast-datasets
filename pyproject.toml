@@ -4,6 +4,7 @@ dynamic = ["version"]
 description = "Intake catalog for datasets relevant for machine learning based nowcasting"
 authors = [
     {name = "Leif Denby", email = "lcd@dmi.dk"},
+    {name = "Gabriele Franch", email = "franch@fbk.eu"},
 ]
 readme = "README.md"
 requires-python = ">=3.11"
@@ -19,6 +20,15 @@ license = "Apache-2.0 OR BSD-3-Clause"
 license-files = [
     "LICENSE-APACHE",
     "LICENSE-BSD",
+]
+
+[project.optional-dependencies]
+plotting = [
+    "cartopy>=0.25.0",
+    "dask>=2024.0.0",
+    "matplotlib>=3.10.0",
+    "numpy>=1.24",
+    "pandas>=2.0",
 ]
 
 [dependency-groups]
@@ -62,3 +72,6 @@ mlcast_datasets = ["catalog/*.yaml", "catalog/**/*.yaml"]
 
 [tool.setuptools_scm]
 version_scheme = "post-release"
+
+[tool.isort]
+profile = "black"
