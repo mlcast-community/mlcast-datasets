@@ -105,6 +105,54 @@ Attributes: (12/13)
 Start using the dataset 🙂
 
 
+## Notes
+
+Until we have more complete documentation we will use this section to document any solutions to common problems.
+
+### Writing datasets from this catalog as Zarr v3
+
+Some datasets in the catalog are stored using the **Zarr v2** format. When such datasets are opened via Intake/Xarray and then written out again as **Zarr v3**, you may encounter codec errors like:
+
+```
+TypeError: Expected a BytesBytesCodec. Got <class 'numcodecs.zstd.Zstd'>
+```
+
+This happens because Zarr v2 stores compression metadata using `numcodecs` filters, which the Zarr v3 codec system does not accept.
+
+**✔ How to safely write a Zarr v3 dataset**
+
+1. Open the dataset via Intake/Xarray so it becomes Dask-backed:
+
+```python
+ds = cat.my_dataset.to_dask()
+```
+
+2. Remove Zarr v2 compression metadata if present:
+
+```python
+for v in ds.variables.values():
+    v.encoding.pop("compressors", None)
+    v.encoding.pop("filters", None)
+    v.encoding.pop("shards", None)  # optional
+```
+
+3. Write as Zarr v3:
+
+```python
+ds.to_zarr("out.zarr", zarr_version=3)
+```
+
+Chunking is inherited from the Dask array, so removing these encoding keys does **not** change the dataset’s chunk layout.
+
+** 🛈 If you want to keep Zarr v2**
+
+To preserve the original Zarr v2 format on write, specify:
+
+```python
+ds.to_zarr("out.zarr", zarr_version=2)
+```
+
+
 ## Contributing
 
 We are always looking for new datasets to add to the catalog. If you have a dataset you would like to contribute, please open an issue or a pull request.
