@@ -418,40 +418,10 @@
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="fr-mf-5-min-rainfall-rate">
 <h1>FR-MF - 5-min Rainfall rate<a class="headerlink" href="#fr-mf-5-min-rainfall-rate" title="Link to this heading">#</a></h1>
-<p>The French MF SRI dataset is available in the intake catalog as <a class="reference internal" href="#"><span class="xref myst">name_ds_on_catalog</span></a></p>
+<p>The French MF SRI dataset is available in the intake catalog as <code class="docutils literal notranslate"><span class="pre">fr_mf_prate_5min</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">fr_mf_prate_5min</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File ~/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/intake/catalog/base.py:427,</span> in <span class="ni">Catalog.__getattr__</span><span class="nt">(self, item)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">427</span>     <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># triggers reload_on_change</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">File ~/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/intake/catalog/base.py:500,</span> in <span class="ni">Catalog.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span>     <span class="k">return</span> <span class="n">out</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">500</span> <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &#39;fr_mf_prate_5min&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">fr_mf_prate_5min</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
-
-<span class="nn">File ~/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/intake/catalog/base.py:429,</span> in <span class="ni">Catalog.__getattr__</span><span class="nt">(self, item)</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># triggers reload_on_change</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">429</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: fr_mf_prate_5min
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">precipitation</span><span class="o">.</span><span class="n">fr_mf_prate_5min</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -482,6 +452,9 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e8ef3324d3e63ed3849be7fbcb13c0d3954d17bd0e72a3661617c47b59c0a0d4.png" src="_images/e8ef3324d3e63ed3849be7fbcb13c0d3954d17bd0e72a3661617c47b59c0a0d4.png" />
 </div>
 </div>
 </section>
