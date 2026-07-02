@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ds = cat.fr_mf_prate_5min.to_dask()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[36mFile [39m[32m~/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/intake/catalog/base.py:427[39m, in [36mCatalog.__getattr__[39m[34m(self, item)[39m
+[32m    426[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m427[39m     [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m[[39;49m[30;43mitem[39;49m[30;43m][39;49m  [38;5;66;03m# triggers reload_on_change[39;00m
+[32m    428[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m e:
+
+[36mFile [39m[32m~/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/intake/catalog/base.py:500[39m, in [36mCatalog.__getitem__[39m[34m(self, key)[39m
+[32m    499[39m     [38;5;28;01mreturn[39;00m out()
+[32m--> [39m[32m500[39m [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key)
+
+[31mKeyError[39m: 'fr_mf_prate_5min'
+
+The above exception was the direct cause of the following exception:
+
+[31mAttributeError[39m                            Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m ds = cat.fr_mf_prate_5min.to_dask()
+
+[36mFile [39m[32m~/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/intake/catalog/base.py:429[39m, in [36mCatalog.__getattr__[39m[34m(self, item)[39m
+[32m    427[39m         [38;5;28;01mreturn[39;00m [38;5;28mself[39m[item]  [38;5;66;03m# triggers reload_on_change[39;00m
+[32m    428[39m     [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m e:
+[32m--> [39m[32m429[39m         [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(item) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01me[39;00m
+[32m    430[39m [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(item)
+
+[31mAttributeError[39m: fr_mf_prate_5min
+
