@@ -30,6 +30,7 @@ This release includes three new radar precipitation datasets from the UK, Denmar
 - UK Met Office C-band rain radar 1 km composite (2005-2025, 5min, OSGB 1 km) [\#17](https://github.com/mlcast-community/mlcast-datasets/issues/17), @franchg
 - Danish radar precipitation dataset covering 2016-2025 at 10min, 0.5km resolution, [\#21](https://github.com/mlcast-community/mlcast-datasets/pull/21), @arjj8
 - Italian DPC SRI radar precipitation dataset (2010-2025, 1km, 5min) [\#14](https://github.com/mlcast-community/mlcast-datasets/issues/14), @franchg
+- Météo-France radar precipitation dataset (from 2020-01-01 to 2024-12-31, 5min, 1km grid-size) [\#49](https://github.com/mlcast-community/mlcast-datasets/issues/49), @gzemo
 
 ### Maintenance
 
