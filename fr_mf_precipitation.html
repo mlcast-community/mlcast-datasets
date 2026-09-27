@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium &#8212; MLCast Community intake catalog - datasets for ML nowcasting</title>
+    <title>FR-MF - Rainfall rate over France mainland &#8212; MLCast Community intake catalog - datasets for ML nowcasting</title>
   
   
   
@@ -60,12 +60,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'be_rmi_precipitation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fr_mf_precipitation';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="FR-MF - Rainfall rate over France mainland" href="fr_mf_precipitation.html" />
-    <link rel="prev" title="UK Met Office - C-band rain radar composite" href="uk_metoffice_precipitation.html" />
+    <link rel="prev" title="BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium" href="be_rmi_precipitation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,8 +222,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="uk_metoffice_precipitation.html">UK Met Office - C-band rain radar composite</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fr_mf_precipitation.html">FR-MF - Rainfall rate over France mainland</a></li>
+<li class="toctree-l1"><a class="reference internal" href="be_rmi_precipitation.html">BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">FR-MF - Rainfall rate over France mainland</a></li>
 
 </ul>
 
@@ -302,7 +301,7 @@
       
       
       
-      <li><a href="https://github.com/mlcast-community/mlcast-datasets/issues/new?title=Issue%20on%20page%20%2Fbe_rmi_precipitation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mlcast-community/mlcast-datasets/issues/new?title=Issue%20on%20page%20%2Ffr_mf_precipitation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +331,7 @@
       
       
       
-      <li><a href="_sources/be_rmi_precipitation.ipynb" target="_blank"
+      <li><a href="_sources/fr_mf_precipitation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium</h1>
+    <h1>FR-MF - Rainfall rate over France mainland</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -418,9 +417,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minute-radar-rain-gauge-merged-rain-rate">5-minute radar-rain-gauge merged rain rate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-further-reading">📚 References &amp; Further Reading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FR-MF - Rainfall rate over France mainland</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-repositories">Related repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fr-mf-5-min-rainfall-rate">FR-MF - 5-min Rainfall rate</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -431,16 +436,42 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="be-rmi-radclim-radarrain-gauge-merged-precipitation-over-belgium">
-<h1>BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium<a class="headerlink" href="#be-rmi-radclim-radarrain-gauge-merged-precipitation-over-belgium" title="Link to this heading">#</a></h1>
-<p>This notebook describes how to access and use the zarr-version of the <strong><a class="reference external" href="https://opendata.meteo.be/">BE RADCLIM 1 km Composite Rainfall</a></strong> dataset, produced by the Royal Meteorological Institute of Belgium (RMI). RADCLIM is an offline, reprocessed quantitative precipitation dataset designed for climatological analysis, filling in gaps that occurred in the real-time RADQPE product.</p>
-<p>The dataset provides <strong>1 km gridded precipitation</strong> accumulations on a 700x700 grid over Belgium and the surrounding area (0.3°W–9.7°E, 47.4–53.7°N) at <strong>5-minute rain-rate</strong> (mm/h)</p>
-<p>Precipitation fields are derived from a network of <strong>four C-band (partially dual-polarisation) weather radars</strong> (Jabbeke, Wideumont, Helchteren, Avenois) covering the Belgian territory. For this product, radar estimates are merged with rain-gauge observations from automatic weather stations of multiple Belgian networks (excluding climatological stations) using <strong>mean-field bias (MFB) correction</strong>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">v0.1.1</span></code> zarr version of the dataset covers <strong>2017-01-01 to 2023-11-30</strong> (archive period). It is projected in the <strong>Belgian Lambert 2008</strong> coordinate reference system (EPSG:3812).</p>
-<p>License: <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="fr-mf-rainfall-rate-over-france-mainland">
+<h1>FR-MF - Rainfall rate over France mainland<a class="headerlink" href="#fr-mf-rainfall-rate-over-france-mainland" title="Link to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>This notebook describes how to access and use the zarr-version of the French radar data provided by <a class="reference external" href="https://meteofrance.com/">Météo-France</a>.
+The dataset includes aproximately ~500.000 5 min timesteps covering a 1536 x 1536 resolution with 1km grid-size. The original radar.npz files are stored in (mm x 10^-2) and the .zarr dataset is in precipitation rate (mm/h).</p>
+</section>
+<section id="related-repositories">
+<h2>Related repositories<a class="headerlink" href="#related-repositories" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The conversion of the radar data was done by the code hosted on <a class="github reference external" href="https://github.com/mlcast-community/mlcast-dataset-FR-MF">mlcast-community/mlcast-dataset-FR-MF</a>.</p></li>
+<li><p>The radar dataset can be directly downloaded from Météo-France <a class="reference external" href="https://huggingface.co/datasets/meteofrance/fr-radar-rainfall/tree/main">Hugging Face</a> repository.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">v0.1.0</span></code> zarr dataset covers the temporal period of <code class="docutils literal notranslate"><span class="pre">2020-01-01</span></code> to <code class="docutils literal notranslate"><span class="pre">2024-12-31</span></code>.</p>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>Data provided by Météo-France. Processed and distributed by Météo-France AI Lab for open research and development purposes.
+Please cite as:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span>@misc<span class="nb">{</span>radar<span class="nb">_</span>rainfall<span class="nb">_</span>france,
+  title        = <span class="nb">{</span>5 Minutes Radar Rainfall over French Mainland Territory<span class="nb">}</span>,
+  author       = <span class="nb">{</span>Météo-France<span class="nb">}</span>,
+  year         = <span class="nb">{</span>2025<span class="nb">}</span>,
+  howpublished = <span class="nb">{</span><span class="k">\url</span><span class="nb">{</span>https://huggingface.co/datasets/meteofrance/radar-rainfall<span class="nb">}}</span>,
+  note         = <span class="nb">{</span>Distributed under Etalab 2.0 License<span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+</div>
+<p>Licence: <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">mlcast_datasets</span>
 </pre></div>
 </div>
@@ -448,8 +479,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the mlcast datasets intake catalog and list available precipitation datasets</span>
-<span class="n">cat</span> <span class="o">=</span> <span class="n">mlcast_datasets</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">mlcast_datasets</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">()</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">precipitation</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -466,13 +496,14 @@
 </div>
 </div>
 </div>
-<section id="minute-radar-rain-gauge-merged-rain-rate">
-<h2>5-minute radar-rain-gauge merged rain rate<a class="headerlink" href="#minute-radar-rain-gauge-merged-rain-rate" title="Link to this heading">#</a></h2>
-<p>The RADCLIM 5-minute rain-rate product with mean-field bias (MFB) correction is available in the intake catalog as <code class="docutils literal notranslate"><span class="pre">be_rmi_radclim_mfb_5min</span></code>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fr-mf-5-min-rainfall-rate">
+<h1>FR-MF - 5-min Rainfall rate<a class="headerlink" href="#fr-mf-5-min-rainfall-rate" title="Link to this heading">#</a></h1>
+<p>The French MF SRI dataset is available in the intake catalog as <code class="docutils literal notranslate"><span class="pre">fr_mf_prate_5min</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the RADCLIM 5-minute rain-rate dataset lazily via Dask</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">precipitation</span><span class="o">.</span><span class="n">be_rmi_radclim_mfb_5min</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">precipitation</span><span class="o">.</span><span class="n">fr_mf_prate_5min</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -1020,33 +1051,37 @@ dl.xr-attrs {
   filter: drop-shadow(1px 1px 5px var(--xr-font-color2));
   stroke-width: 0.8px;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 1TB
-Dimensions:        (time: 726332, y: 700, x: 700, missing_times: 868)
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 5TB
+Dimensions:        (time: 525787, y: 1536, x: 1536, missing_times: 389)
 Coordinates:
-  * time           (time) datetime64[ns] 6MB 2017-01-01 ... 2023-11-30T23:55:00
-  * y              (y) float64 6kB 9.995e+05 9.985e+05 ... 3.015e+05 3.005e+05
-  * x              (x) float64 6kB 3.005e+05 3.015e+05 ... 9.985e+05 9.995e+05
-    lat            (y, x) float64 4MB dask.array&lt;chunksize=(700, 700), meta=np.ndarray&gt;
-    lon            (y, x) float64 4MB dask.array&lt;chunksize=(700, 700), meta=np.ndarray&gt;
-  * missing_times  (missing_times) datetime64[ns] 7kB 2018-11-30T13:20:00 ......
-    spatial_ref    int64 8B ...
+  * time           (time) datetime64[ns] 4MB 2020-01-01 ... 2024-12-31T23:55:00
+  * y              (y) float64 12kB -3.527e+06 -3.528e+06 ... -5.062e+06
+  * x              (x) float64 12kB -6.197e+05 -6.187e+05 ... 9.153e+05
+    lat            (y, x) float64 19MB dask.array&lt;chunksize=(1536, 1536), meta=np.ndarray&gt;
+    lon            (y, x) float64 19MB dask.array&lt;chunksize=(1536, 1536), meta=np.ndarray&gt;
+  * missing_times  (missing_times) datetime64[m] 3kB 2020-01-27T07:45:00 ... ...
 Data variables:
-    rain_rate      (time, y, x) float32 1TB dask.array&lt;chunksize=(1, 700, 700), meta=np.ndarray&gt;
-Attributes:
-    Conventions:                CF-1.10
-    license:                    CC-BY-4.0
-    institute:                  Royal Meteorological Institute of Belgium
-    contact:                    Maryna Lukach &lt;rad_op@meteo.be&gt;
-    mlcast_created_on:          2026-03-27T15:24:18.195842+00:00
-    mlcast_created_by:          Simon De Kock, Lesley De Cruz &lt;simon.de.kock@...
-    mlcast_created_with:        https://github.com/mlcast-community/mlcast-da...
-    mlcast_dataset_version:     0.1.1
-    mlcast_dataset_identifier:  BE-radclim_mfb-rain_rate
-    consistent_timestep_start:  2017-01-01T00:00:00</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0ff1f441-4525-48f3-b316-78d19ab06445' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-0ff1f441-4525-48f3-b316-78d19ab06445' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 726332</li><li><span class='xr-has-index'>y</span>: 700</li><li><span class='xr-has-index'>x</span>: 700</li><li><span class='xr-has-index'>missing_times</span>: 868</li></ul></div></li><li class='xr-section-item'><input id='section-766af9a9-7708-4a01-929b-22cf1fa14361' class='xr-section-summary-in' type='checkbox' checked /><label for='section-766af9a9-7708-4a01-929b-22cf1fa14361' class='xr-section-summary' title='Expand/collapse section'>Coordinates: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-01-01 ... 2023-11-30T23:55:00</div><input id='attrs-bdb971e3-e223-4260-bafd-4d9318fcf073' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bdb971e3-e223-4260-bafd-4d9318fcf073' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1b5664c4-8553-4b2d-b2ac-3d80831a645f' class='xr-var-data-in' type='checkbox'><label for='data-1b5664c4-8553-4b2d-b2ac-3d80831a645f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>T</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;time&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-01-01T00:00:00.000000000&#x27;, &#x27;2017-01-01T00:05:00.000000000&#x27;,
-       &#x27;2017-01-01T00:10:00.000000000&#x27;, ..., &#x27;2023-11-30T23:45:00.000000000&#x27;,
-       &#x27;2023-11-30T23:50:00.000000000&#x27;, &#x27;2023-11-30T23:55:00.000000000&#x27;],
-      shape=(726332,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>9.995e+05 9.985e+05 ... 3.005e+05</div><input id='attrs-8e6a8eba-04ab-4d11-8e32-2f214881615a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8e6a8eba-04ab-4d11-8e32-2f214881615a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-369b038a-3491-4537-839d-2d135c096596' class='xr-var-data-in' type='checkbox'><label for='data-369b038a-3491-4537-839d-2d135c096596' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;y&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([999499.999999, 998499.999999, 997499.999999, ..., 302499.999998,
-       301499.999998, 300499.999998], shape=(700,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>3.005e+05 3.015e+05 ... 9.995e+05</div><input id='attrs-c595bdcc-1b93-4302-870f-cc24c65e51c6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c595bdcc-1b93-4302-870f-cc24c65e51c6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a52c0a2d-7398-4562-a896-e3a182e061c9' class='xr-var-data-in' type='checkbox'><label for='data-a52c0a2d-7398-4562-a896-e3a182e061c9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;x&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([300500., 301500., 302500., ..., 997500., 998500., 999500.], shape=(700,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(700, 700), meta=np.ndarray&gt;</div><input id='attrs-4fa7f8f2-65d8-4d46-aee7-3e8abc54dde0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4fa7f8f2-65d8-4d46-aee7-3e8abc54dde0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b9b6e4ba-11aa-4061-9cce-803d0f5442de' class='xr-var-data-in' type='checkbox'><label for='data-b9b6e4ba-11aa-4061-9cce-803d0f5442de' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;y&#x27;, &#x27;x&#x27;]</dd></dl></div><div class='xr-var-data'><table>
+    crs            float64 8B ...
+    prate          (time, y, x) float32 5TB dask.array&lt;chunksize=(1, 1536, 1536), meta=np.ndarray&gt;
+Attributes: (12/13)
+    Author:                     Météo-France
+    Copyright:                  Météo-France
+    Processed by:               WebValley2026, Fondazione Bruno Kessler
+    base_frequencies:           5min:2020-01-01T00:00/2024-12-31T23:55
+    consistent_timestep_start:  2020-01-01T00:00
+    history:                    Created at 2026-06-29T19:00:00+01:00
+    ...                         ...
+    mlcast_created_by:          WebValley2026, Fondazione Bruno Kessler, &lt;web...
+    mlcast_created_on:          2026-06-29T19:00:00+01:00
+    mlcast_dataset_identifier:  FR-MF-prate
+    mlcast_dataset_version:     0.1.0
+    title:                      Météo-France Radar Rainfall Archive
+    mlcast_created_with:        https://github.com/mlcast-community/mlcast-da...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9ce56969-8835-4d81-a628-434a635fb2fb' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-9ce56969-8835-4d81-a628-434a635fb2fb' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 525787</li><li><span class='xr-has-index'>y</span>: 1536</li><li><span class='xr-has-index'>x</span>: 1536</li><li><span class='xr-has-index'>missing_times</span>: 389</li></ul></div></li><li class='xr-section-item'><input id='section-47dd6a17-276a-4f49-9900-62579b0fbfbb' class='xr-section-summary-in' type='checkbox' checked /><label for='section-47dd6a17-276a-4f49-9900-62579b0fbfbb' class='xr-section-summary' title='Expand/collapse section'>Coordinates: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-01-01 ... 2024-12-31T23:55:00</div><input id='attrs-4efb0fe0-5cee-49eb-9aa5-6242768ba36f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4efb0fe0-5cee-49eb-9aa5-6242768ba36f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b04d6414-8e1a-4549-bd4e-72388961f7a1' class='xr-var-data-in' type='checkbox'><label for='data-b04d6414-8e1a-4549-bd4e-72388961f7a1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;time&#x27;]</dd><dt><span>calendar :</span></dt><dd>proleptic_gregorian</dd><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>units :</span></dt><dd>minutes since 2020-01-01</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-01-01T00:00:00.000000000&#x27;, &#x27;2020-01-01T00:05:00.000000000&#x27;,
+       &#x27;2020-01-01T00:10:00.000000000&#x27;, ..., &#x27;2024-12-31T23:45:00.000000000&#x27;,
+       &#x27;2024-12-31T23:50:00.000000000&#x27;, &#x27;2024-12-31T23:55:00.000000000&#x27;],
+      shape=(525787,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.527e+06 ... -5.062e+06</div><input id='attrs-7131e7b5-a3b4-49ae-b983-d51d88ecaeb3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7131e7b5-a3b4-49ae-b983-d51d88ecaeb3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-25e3f39c-943d-4099-a517-2defbe236fe0' class='xr-var-data-in' type='checkbox'><label for='data-25e3f39c-943d-4099-a517-2defbe236fe0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;y&#x27;]</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-3526818.459197, -3527818.459197, -3528818.459197, ..., -5059818.459197,
+       -5060818.459197, -5061818.459197], shape=(1536,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.197e+05 -6.187e+05 ... 9.153e+05</div><input id='attrs-e4bf052c-2651-4e29-a9e2-440d0aaa8c20' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e4bf052c-2651-4e29-a9e2-440d0aaa8c20' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-abf5798f-3129-4f0a-a364-50faaa26c537' class='xr-var-data-in' type='checkbox'><label for='data-abf5798f-3129-4f0a-a364-50faaa26c537' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;x&#x27;]</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([-619652.095362, -618652.095362, -617652.095362, ...,  913347.904638,
+        914347.904638,  915347.904638], shape=(1536,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1536, 1536), meta=np.ndarray&gt;</div><input id='attrs-91ddbb92-b70f-4fbd-a737-932988de9cb9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-91ddbb92-b70f-4fbd-a737-932988de9cb9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3d15b0e9-5b3d-4ac3-aed1-bac70d9c125d' class='xr-var-data-in' type='checkbox'><label for='data-3d15b0e9-5b3d-4ac3-aed1-bac70d9c125d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;y&#x27;, &#x27;x&#x27;]</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1061,14 +1096,14 @@ Attributes:
                     
                     <tr>
                         <th> Bytes </th>
-                        <td> 3.74 MiB </td>
-                        <td> 3.74 MiB </td>
+                        <td> 18.00 MiB </td>
+                        <td> 18.00 MiB </td>
                     </tr>
                     
                     <tr>
                         <th> Shape </th>
-                        <td> (700, 700) </td>
-                        <td> (700, 700) </td>
+                        <td> (1536, 1536) </td>
+                        <td> (1536, 1536) </td>
                     </tr>
                     <tr>
                         <th> Dask graph </th>
@@ -1096,12 +1131,12 @@ Attributes:
   <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
 
   <!-- Text -->
-  <text x="60.0" y="140.0" font-size="1.0rem" font-weight="100" text-anchor="middle" >700</text>
-  <text x="140.0" y="60.0" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.0,60.0)">700</text>
+  <text x="60.0" y="140.0" font-size="1.0rem" font-weight="100" text-anchor="middle" >1536</text>
+  <text x="140.0" y="60.0" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.0,60.0)">1536</text>
 </svg>
         </td>
     </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(700, 700), meta=np.ndarray&gt;</div><input id='attrs-e00a7f3b-84b8-435d-878f-932ea1a13408' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e00a7f3b-84b8-435d-878f-932ea1a13408' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-73d4d3b6-2e3f-4e0c-9df0-3a82a0c8ff24' class='xr-var-data-in' type='checkbox'><label for='data-73d4d3b6-2e3f-4e0c-9df0-3a82a0c8ff24' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;y&#x27;, &#x27;x&#x27;]</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1536, 1536), meta=np.ndarray&gt;</div><input id='attrs-05a4b749-a1d3-4051-aa0b-0fca329db83f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-05a4b749-a1d3-4051-aa0b-0fca329db83f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-22a2bc3a-3642-49c6-ba9f-432fd7b9612a' class='xr-var-data-in' type='checkbox'><label for='data-22a2bc3a-3642-49c6-ba9f-432fd7b9612a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;y&#x27;, &#x27;x&#x27;]</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1116,14 +1151,14 @@ Attributes:
                     
                     <tr>
                         <th> Bytes </th>
-                        <td> 3.74 MiB </td>
-                        <td> 3.74 MiB </td>
+                        <td> 18.00 MiB </td>
+                        <td> 18.00 MiB </td>
                     </tr>
                     
                     <tr>
                         <th> Shape </th>
-                        <td> (700, 700) </td>
-                        <td> (700, 700) </td>
+                        <td> (1536, 1536) </td>
+                        <td> (1536, 1536) </td>
                     </tr>
                     <tr>
                         <th> Dask graph </th>
@@ -1151,15 +1186,52 @@ Attributes:
   <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
 
   <!-- Text -->
-  <text x="60.0" y="140.0" font-size="1.0rem" font-weight="100" text-anchor="middle" >700</text>
-  <text x="140.0" y="60.0" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.0,60.0)">700</text>
+  <text x="60.0" y="140.0" font-size="1.0rem" font-weight="100" text-anchor="middle" >1536</text>
+  <text x="140.0" y="60.0" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.0,60.0)">1536</text>
 </svg>
         </td>
     </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>missing_times</span></div><div class='xr-var-dims'>(missing_times)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2018-11-30T13:20:00 ... 2023-06-...</div><input id='attrs-9db1edb8-b4b4-4211-951d-21d4b48fe4ac' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9db1edb8-b4b4-4211-951d-21d4b48fe4ac' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2612a9aa-2697-47ea-9aa0-f3155dea79b7' class='xr-var-data-in' type='checkbox'><label for='data-2612a9aa-2697-47ea-9aa0-f3155dea79b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Missing timestamps in regular period</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;missing_times&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2018-11-30T13:20:00.000000000&#x27;, &#x27;2018-11-30T13:25:00.000000000&#x27;,
-       &#x27;2018-11-30T13:30:00.000000000&#x27;, ..., &#x27;2023-06-20T23:45:00.000000000&#x27;,
-       &#x27;2023-06-20T23:50:00.000000000&#x27;, &#x27;2023-06-20T23:55:00.000000000&#x27;],
-      shape=(868,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-29341f10-4e7c-46b9-937f-2b2e540527a1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-29341f10-4e7c-46b9-937f-2b2e540527a1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ffce0f2d-4124-45b6-a114-aff1f9559d4e' class='xr-var-data-in' type='checkbox'><label for='data-ffce0f2d-4124-45b6-a114-aff1f9559d4e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;Unknown based on GRS 1980 ellipsoid&quot;,ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,7019]]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8901]]],CONVERSION[&quot;unknown&quot;,METHOD[&quot;Lambert Conic Conformal (2SP)&quot;,ID[&quot;EPSG&quot;,9802]],PARAMETER[&quot;Latitude of false origin&quot;,50.797815,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8821]],PARAMETER[&quot;Longitude of false origin&quot;,4.35921583333333,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8822]],PARAMETER[&quot;Latitude of 1st standard parallel&quot;,49.8333333333333,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8823]],PARAMETER[&quot;Latitude of 2nd standard parallel&quot;,51.1666666666667,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8824]],PARAMETER[&quot;Easting at false origin&quot;,649328,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8826]],PARAMETER[&quot;Northing at false origin&quot;,665262,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8827]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]], BBOX[47.42080105054669, -0.917389751816907, 53.79993354841378, 9.656082890356625]]</dd><dt><span>semi_major_axis :</span></dt><dd>6378137.0</dd><dt><span>semi_minor_axis :</span></dt><dd>6356752.314140356</dd><dt><span>inverse_flattening :</span></dt><dd>298.257222101</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>GRS 1980</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>unknown</dd><dt><span>horizontal_datum_name :</span></dt><dd>Unknown based on GRS 1980 ellipsoid using towgs84=0,0,0,0,0,0,0</dd><dt><span>projected_crs_name :</span></dt><dd>unknown</dd><dt><span>grid_mapping_name :</span></dt><dd>lambert_conformal_conic</dd><dt><span>standard_parallel :</span></dt><dd>[49.8333333333333, 51.1666666666667]</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>50.797815</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>4.35921583333333</dd><dt><span>false_easting :</span></dt><dd>649328.0</dd><dt><span>false_northing :</span></dt><dd>665262.0</dd><dt><span>towgs84 :</span></dt><dd>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</dd><dt><span>spatial_ref :</span></dt><dd>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;Unknown based on GRS 1980 ellipsoid&quot;,ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,7019]]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8901]]],CONVERSION[&quot;unknown&quot;,METHOD[&quot;Lambert Conic Conformal (2SP)&quot;,ID[&quot;EPSG&quot;,9802]],PARAMETER[&quot;Latitude of false origin&quot;,50.797815,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8821]],PARAMETER[&quot;Longitude of false origin&quot;,4.35921583333333,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8822]],PARAMETER[&quot;Latitude of 1st standard parallel&quot;,49.8333333333333,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8823]],PARAMETER[&quot;Latitude of 2nd standard parallel&quot;,51.1666666666667,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8824]],PARAMETER[&quot;Easting at false origin&quot;,649328,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8826]],PARAMETER[&quot;Northing at false origin&quot;,665262,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8827]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]], BBOX[47.42080105054669, -0.917389751816907, 53.79993354841378, 9.656082890356625]]</dd><dt><span>proj4 :</span></dt><dd>+proj=lcc +lat_0=50.797815 +lon_0=4.35921583333333 +lat_1=49.8333333333333 +lat_2=51.1666666666667 +x_0=649328 +y_0=665262 +ellps=GRS80 +units=m +no_defs +type=crs</dd><dt><span>projdef_original :</span></dt><dd>+proj=lcc +lat_1=49.83333333333334 +lat_2=51.16666666666666 +lat_0=50.797815 +lon_0=4.359215833333333 +x_0=649328 +y_0=665262 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs </dd><dt><span>GeoTransform :</span></dt><dd>299999.99999995524 1000.0000000001287 0.0 999999.999999369 0.0 -1000.0000000018264</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[]</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=int64]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e2a0a897-8410-4de0-bd1d-6dc82f7085f5' class='xr-section-summary-in' type='checkbox' checked /><label for='section-e2a0a897-8410-4de0-bd1d-6dc82f7085f5' class='xr-section-summary' title='Expand/collapse section'>Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>rain_rate</span></div><div class='xr-var-dims'>(time, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 700, 700), meta=np.ndarray&gt;</div><input id='attrs-ff5c53ec-4904-4d7f-8778-c9662734c8bf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ff5c53ec-4904-4d7f-8778-c9662734c8bf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1b747d72-7559-4074-b6f5-a3c1d66a983a' class='xr-var-data-in' type='checkbox'><label for='data-1b747d72-7559-4074-b6f5-a3c1d66a983a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Rain rate (QPE_MFB)</dd><dt><span>units :</span></dt><dd>kg m-2 h-1</dd><dt><span>standard_name :</span></dt><dd>rainfall_flux</dd><dt><span>quantity :</span></dt><dd>RATE</dd><dt><span>product :</span></dt><dd>QPE</dd><dt><span>product_description :</span></dt><dd>Quantitative precipitation estimate</dd><dt><span>method :</span></dt><dd>MFB</dd><dt><span>method_description :</span></dt><dd>Mean field bias correction</dd><dt><span>grid_mapping :</span></dt><dd>spatial_ref</dd><dt><span>radclim_source_variable :</span></dt><dd>rate_qpe_mfb</dd><dt><span>_ARRAY_DIMENSIONS :</span></dt><dd>[&#x27;time&#x27;, &#x27;y&#x27;, &#x27;x&#x27;]</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>missing_times</span></div><div class='xr-var-dims'>(missing_times)</div><div class='xr-var-dtype'>datetime64[m]</div><div class='xr-var-preview xr-preview'>2020-01-27T07:45:00 ... 2024-12-...</div><input id='attrs-3b74a25f-75c1-4a0d-8027-03783ce7e732' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3b74a25f-75c1-4a0d-8027-03783ce7e732' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b1381620-136f-4fba-8dec-954a38ddd101' class='xr-var-data-in' type='checkbox'><label for='data-b1381620-136f-4fba-8dec-954a38ddd101' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;missing_times&#x27;]</dd><dt><span>calendar :</span></dt><dd>proleptic_gregorian</dd><dt><span>units :</span></dt><dd>minutes since 2020-01-01</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-01-27T07:45&#x27;, &#x27;2020-01-27T07:50&#x27;, &#x27;2020-01-27T07:55&#x27;, ...,
+       &#x27;2024-11-22T07:10&#x27;, &#x27;2024-11-26T08:55&#x27;, &#x27;2024-12-23T08:50&#x27;],
+      shape=(389,), dtype=&#x27;datetime64[m]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d954401b-fc63-4d3e-be17-203700351eae' class='xr-section-summary-in' type='checkbox' checked /><label for='section-d954401b-fc63-4d3e-be17-203700351eae' class='xr-section-summary' title='Expand/collapse section'>Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>crs</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-be7cb24c-6826-4d62-a20b-26c2fabbac51' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-be7cb24c-6826-4d62-a20b-26c2fabbac51' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-774fdfc4-8e71-4eef-b2ed-0dca656993dd' class='xr-var-data-in' type='checkbox'><label for='data-774fdfc4-8e71-4eef-b2ed-0dca656993dd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>proj4 :</span></dt><dd>+proj=stere +lat_0=90 +lat_ts=45 +lon_0=0 +x_0=0 +y_0=0 +a=6378137 +rf=298.252840776245 +units=m +no_defs +type=crs</dd><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;unknown&quot;,
+    GEOGCS[&quot;unknown&quot;,
+        DATUM[&quot;unknown&quot;,
+            SPHEROID[&quot;unknown&quot;,6378137,298.252840776245]],
+        PRIMEM[&quot;Greenwich&quot;,0],
+        UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]]],
+    PROJECTION[&quot;Polar_Stereographic&quot;],
+    PARAMETER[&quot;latitude_of_origin&quot;,45],
+    PARAMETER[&quot;central_meridian&quot;,0],
+    PARAMETER[&quot;false_easting&quot;,0],
+    PARAMETER[&quot;false_northing&quot;,0],
+    UNIT[&quot;metre&quot;,1],
+    AXIS[&quot;Easting&quot;,SOUTH],
+    AXIS[&quot;Northing&quot;,SOUTH],
+    USAGE[
+        SCOPE[&quot;Engineering survey, topographic mapping.&quot;],
+        AREA[&quot;Europe - between 39.48°N and 54.18°N; -9.96°E and 14.55°E.&quot;],
+        BBOX[39.477880507122855, -9.964999999999996, 54.18403098825441, 14.54948729204824]
+    ]
+]</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;unknown&quot;,
+    GEOGCS[&quot;unknown&quot;,
+        DATUM[&quot;unknown&quot;,
+            SPHEROID[&quot;unknown&quot;,6378137,298.252840776245]],
+        PRIMEM[&quot;Greenwich&quot;,0],
+        UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]]],
+    PROJECTION[&quot;Polar_Stereographic&quot;],
+    PARAMETER[&quot;latitude_of_origin&quot;,45],
+    PARAMETER[&quot;central_meridian&quot;,0],
+    PARAMETER[&quot;false_easting&quot;,0],
+    PARAMETER[&quot;false_northing&quot;,0],
+    UNIT[&quot;metre&quot;,1],
+    AXIS[&quot;Easting&quot;,SOUTH],
+    AXIS[&quot;Northing&quot;,SOUTH],
+    USAGE[
+        SCOPE[&quot;Engineering survey, topographic mapping.&quot;],
+        AREA[&quot;Europe - between 39.48°N and 54.18°N; -9.96°E and 14.55°E.&quot;],
+        BBOX[39.477880507122855, -9.964999999999996, 54.18403098825441, 14.54948729204824]
+    ]
+]</dd><dt><span>semi_major_axis :</span></dt><dd>6378137.0</dd><dt><span>semi_minor_axis :</span></dt><dd>6356752.0</dd><dt><span>inverse_flattening :</span></dt><dd>298.252840776245</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>unknown</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>unknown</dd><dt><span>horizontal_datum_name :</span></dt><dd>unknown</dd><dt><span>projected_crs_name :</span></dt><dd>unknown</dd><dt><span>grid_mapping_name :</span></dt><dd>polar_stereographic</dd><dt><span>standard_parallel :</span></dt><dd>45.0</dd><dt><span>straight_vertical_longitude_from_pole :</span></dt><dd>0.0</dd><dt><span>false_easting :</span></dt><dd>0.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>90.0</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>prate</span></div><div class='xr-var-dims'>(time, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 1536, 1536), meta=np.ndarray&gt;</div><input id='attrs-f3a9a421-3762-4552-82f9-e67340f3ecc8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f3a9a421-3762-4552-82f9-e67340f3ecc8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d49c11e1-3a63-4b4c-8ba5-8eb9057fc319' class='xr-var-data-in' type='checkbox'><label for='data-d49c11e1-3a63-4b4c-8ba5-8eb9057fc319' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>dimension_names :</span></dt><dd>[&#x27;time&#x27;, &#x27;y&#x27;, &#x27;x&#x27;]</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Total precipitation rate</dd><dt><span>standard_name :</span></dt><dd>precipitation_flux</dd><dt><span>units :</span></dt><dd>kg m-2 h-1</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1174,18 +1246,18 @@ Attributes:
                     
                     <tr>
                         <th> Bytes </th>
-                        <td> 1.29 TiB </td>
-                        <td> 1.87 MiB </td>
+                        <td> 4.51 TiB </td>
+                        <td> 9.00 MiB </td>
                     </tr>
                     
                     <tr>
                         <th> Shape </th>
-                        <td> (726332, 700, 700) </td>
-                        <td> (1, 700, 700) </td>
+                        <td> (525787, 1536, 1536) </td>
+                        <td> (1, 1536, 1536) </td>
                     </tr>
                     <tr>
                         <th> Dask graph </th>
-                        <td colspan="2"> 726332 chunks in 2 graph layers </td>
+                        <td colspan="2"> 525787 chunks in 2 graph layers </td>
                     </tr>
                     <tr>
                         <th> Data type </th>
@@ -1267,36 +1339,23 @@ Attributes:
   <polygon points="80.58823529411765,70.58823529411765 106.00085180870013,70.58823529411765 106.00085180870013,96.00085180870013 80.58823529411765,96.00085180870013" style="fill:#ECB172A0;stroke-width:0"/>
 
   <!-- Text -->
-  <text x="93.29454355140889" y="116.00085180870013" font-size="1.0rem" font-weight="100" text-anchor="middle" >700</text>
-  <text x="126.00085180870013" y="83.29454355140889" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,126.00085180870013,83.29454355140889)">700</text>
-  <text x="35.294117647058826" y="80.70673416164131" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294117647058826,80.70673416164131)">726332</text>
+  <text x="93.29454355140889" y="116.00085180870013" font-size="1.0rem" font-weight="100" text-anchor="middle" >1536</text>
+  <text x="126.00085180870013" y="83.29454355140889" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,126.00085180870013,83.29454355140889)">1536</text>
+  <text x="35.294117647058826" y="80.70673416164131" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294117647058826,80.70673416164131)">525787</text>
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-6338de51-d937-4519-9317-00d2ece96125' class='xr-section-summary-in' type='checkbox' /><label for='section-6338de51-d937-4519-9317-00d2ece96125' class='xr-section-summary' title='Expand/collapse section'>Attributes: <span>(10)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.10</dd><dt><span>license :</span></dt><dd>CC-BY-4.0</dd><dt><span>institute :</span></dt><dd>Royal Meteorological Institute of Belgium</dd><dt><span>contact :</span></dt><dd>Maryna Lukach &lt;rad_op@meteo.be&gt;</dd><dt><span>mlcast_created_on :</span></dt><dd>2026-03-27T15:24:18.195842+00:00</dd><dt><span>mlcast_created_by :</span></dt><dd>Simon De Kock, Lesley De Cruz &lt;simon.de.kock@vub.be,lesley.decruz@meteo.be&gt;</dd><dt><span>mlcast_created_with :</span></dt><dd>https://github.com/mlcast-community/mlcast-dataset-BE-RMI-radclim@v0.1.1</dd><dt><span>mlcast_dataset_version :</span></dt><dd>0.1.1</dd><dt><span>mlcast_dataset_identifier :</span></dt><dd>BE-radclim_mfb-rain_rate</dd><dt><span>consistent_timestep_start :</span></dt><dd>2017-01-01T00:00:00</dd></dl></div></li></ul></div></div></div></div>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-7d0b44d6-2741-4da1-80d8-918823584520' class='xr-section-summary-in' type='checkbox' /><label for='section-7d0b44d6-2741-4da1-80d8-918823584520' class='xr-section-summary' title='Expand/collapse section'>Attributes: <span>(13)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Author :</span></dt><dd>Météo-France</dd><dt><span>Copyright :</span></dt><dd>Météo-France</dd><dt><span>Processed by :</span></dt><dd>WebValley2026, Fondazione Bruno Kessler</dd><dt><span>base_frequencies :</span></dt><dd>5min:2020-01-01T00:00/2024-12-31T23:55</dd><dt><span>consistent_timestep_start :</span></dt><dd>2020-01-01T00:00</dd><dt><span>history :</span></dt><dd>Created at 2026-06-29T19:00:00+01:00</dd><dt><span>license :</span></dt><dd>CC-BY-4.0</dd><dt><span>mlcast_created_by :</span></dt><dd>WebValley2026, Fondazione Bruno Kessler, &lt;webvalley@fbk.eu&gt;</dd><dt><span>mlcast_created_on :</span></dt><dd>2026-06-29T19:00:00+01:00</dd><dt><span>mlcast_dataset_identifier :</span></dt><dd>FR-MF-prate</dd><dt><span>mlcast_dataset_version :</span></dt><dd>0.1.0</dd><dt><span>title :</span></dt><dd>Météo-France Radar Rainfall Archive</dd><dt><span>mlcast_created_with :</span></dt><dd>https://github.com/mlcast-community/mlcast-dataset-FR-MF@0.1.1</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pyproj</span><span class="w"> </span><span class="kn">import</span> <span class="n">CRS</span>
-
-
-<span class="n">var_name</span> <span class="o">=</span> <span class="s2">"rain_rate"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_name</span> <span class="o">=</span> <span class="s2">"prate"</span>
 <span class="n">crs_name</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span><span class="o">.</span><span class="n">grid_mapping</span>
 <span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Projection</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">crs_name</span><span class="p">]</span><span class="o">.</span><span class="n">crs_wkt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot three consecutive 5-minute timesteps for a selected date</span>
-<span class="c1"># The mid-July 2021 event was a historically severe flooding event over Belgium</span>
-<span class="c1"># (see Journée et al., 2023 in the References section below)</span>
+
 <span class="n">g</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"2021-07-14T16"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"2023-11-17"</span><span class="p">)</span>
     <span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">transform</span><span class="o">=</span><span class="n">data_crs</span><span class="p">,</span>
@@ -1311,41 +1370,18 @@ Attributes:
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">"top"</span><span class="p">,</span> <span class="s2">"left"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2228/2885551012.py:19: FutureWarning: self.axes is deprecated since 2022.11 in order to align with matplotlibs plt.subplots, use self.axs instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2326/3845991549.py:20: FutureWarning: self.axes is deprecated since 2022.11 in order to align with matplotlibs plt.subplots, use self.axs instead.
   for ax in g.axes.flat:
-/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/cartopy/io/__init__.py:263: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_coastline.zip
-  warnings.warn(f'Downloading: {url}', DownloadWarning)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/mlcast-datasets/mlcast-datasets/.venv/lib/python3.12/site-packages/cartopy/io/__init__.py:263: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip
-  warnings.warn(f'Downloading: {url}', DownloadWarning)
-</pre></div>
-</div>
-<img alt="_images/595bdf779d79279b8d841ab0628c2606cb59b33e99c2dd596f51ffea6a222c54.png" src="_images/595bdf779d79279b8d841ab0628c2606cb59b33e99c2dd596f51ffea6a222c54.png" />
+<img alt="_images/a20999eaa5141a2196fe24bfe00b3daeb9ad8166adc8ff8720cb8474d1538590.png" src="_images/a20999eaa5141a2196fe24bfe00b3daeb9ad8166adc8ff8720cb8474d1538590.png" />
 </div>
 </div>
-</section>
-<section id="references-further-reading">
-<h2>📚 References &amp; Further Reading<a class="headerlink" href="#references-further-reading" title="Link to this heading">#</a></h2>
-<p>The RADCLIM dataset is based on the RADQPE methodology. The following publications describe the underlying algorithms and a notable application of the dataset:</p>
-<ul class="simple">
-<li><p>Goudenhoofdt, E. and Delobbe, L. (2016), <em>“Generation and Verification of Rainfall Estimates from 10-Yr Volumetric Weather Radar Measurements”</em>, <strong>Journal of Hydrometeorology</strong>, Vol. 17, Issue 4, pp. 1223–1242.
-→ <a class="reference external" href="https://doi.org/10.1175/JHM-D-15-0166.1">https://doi.org/10.1175/JHM-D-15-0166.1</a></p></li>
-<li><p>Journée, M., Goudenhoofdt, E., Vannitsem, S. and Delobbe, L. (2023), <em>“Quantitative rainfall analysis of the 2021 mid-July flood event in Belgium”</em>, <strong>Hydrology and Earth System Sciences</strong>, Vol. 27, Issue 17, pp. 3169–3189.
-→ <a class="reference external" href="https://doi.org/10.5194/hess-27-3169-2023">https://doi.org/10.5194/hess-27-3169-2023</a></p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>📬 Maintainer:</strong> Royal Meteorological Institute of Belgium (RMI)<br />
-<strong>🔑 License:</strong> <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><br />
-<strong>📥 More information and documentation:</strong> <a class="reference external" href="https://opendata.meteo.be/">RMI Opendata Server</a>
-<strong>⚠️ Use Limitation:</strong> This is a pre-release and can contain errors.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1379,22 +1415,13 @@ Attributes:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="uk_metoffice_precipitation.html"
+       href="be_rmi_precipitation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UK Met Office - C-band rain radar composite</p>
+        <p class="prev-next-title">BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="fr_mf_precipitation.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FR-MF - Rainfall rate over France mainland</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -1414,9 +1441,15 @@ Attributes:
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minute-radar-rain-gauge-merged-rain-rate">5-minute radar-rain-gauge merged rain rate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references-further-reading">📚 References &amp; Further Reading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FR-MF - Rainfall rate over France mainland</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-repositories">Related repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fr-mf-5-min-rainfall-rate">FR-MF - 5-min Rainfall rate</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

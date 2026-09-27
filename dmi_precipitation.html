@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -61,6 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dmi_precipitation';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="IT-DPC - Surface Rainfall Intensity over Italy" href="it_dpc_precipitation.html" />
@@ -68,20 +69,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -107,7 +114,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -173,6 +224,8 @@
 <li class="toctree-l1"><a class="reference internal" href="uk_metoffice_precipitation.html">UK Met Office - C-band rain radar composite</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="be_rmi_precipitation.html">BE RMI - RADCLIM: Radar–Rain-Gauge Merged Precipitation over Belgium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fr_mf_precipitation.html">FR-MF - Rainfall rate over France mainland</a></li>
+
 </ul>
 
     </div>
@@ -364,7 +417,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DMI - Radar reflectivity over Denmark</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dmi-10-min-reflectivity">DMI 10-min reflectivity</a></li>
 </ul>
@@ -401,12 +454,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;radklim_hourly&#39;,
- &#39;radklim_5_minutes&#39;,
- &#39;dmi_10_minutes&#39;,
- &#39;it_dpc_sri_5min&#39;,
- &#39;uk_metoffice_5min&#39;,
- &#39;be_rmi_radclim_mfb_5min&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['radklim_hourly',
+ 'radklim_5_minutes',
+ 'dmi_10_minutes',
+ 'it_dpc_sri_5min',
+ 'uk_metoffice_5min',
+ 'be_rmi_radclim_mfb_5min',
+ 'fr_mf_prate_5min']
 </pre></div>
 </div>
 </div>
@@ -987,12 +1041,12 @@ Attributes:
     mlcast_created_with:        https://github.com/mlcast-community/mlcast-da...
     mlcast_dataset_identifier:  DK-DMI-precipitation
     mlcast_dataset_version:     0.1.1
-    title:                      radar-based precipitation</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-4f0551d1-b731-4bac-a777-0d4bd1f78adc' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-4f0551d1-b731-4bac-a777-0d4bd1f78adc' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 517536</li><li><span class='xr-has-index'>y</span>: 1728</li><li><span class='xr-has-index'>x</span>: 1984</li></ul></div></li><li class='xr-section-item'><input id='section-ad859329-ea5e-483e-8ab5-a98251886002' class='xr-section-summary-in' type='checkbox' checked /><label for='section-ad859329-ea5e-483e-8ab5-a98251886002' class='xr-section-summary' title='Expand/collapse section'>Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-02-29 ... 2025-12-31T23:50:00</div><input id='attrs-ccff2a4f-5bce-44ad-b5b5-7da11b19be4f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ccff2a4f-5bce-44ad-b5b5-7da11b19be4f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e5c05cbe-992f-4f2c-a40e-bef08e617de3' class='xr-var-data-in' type='checkbox'><label for='data-e5c05cbe-992f-4f2c-a40e-bef08e617de3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2016-02-29T00:00:00.000000000&#x27;, &#x27;2016-02-29T00:10:00.000000000&#x27;,
+    title:                      radar-based precipitation</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-1a6059a5-80e2-4320-8d45-868edc420f11' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-1a6059a5-80e2-4320-8d45-868edc420f11' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 517536</li><li><span class='xr-has-index'>y</span>: 1728</li><li><span class='xr-has-index'>x</span>: 1984</li></ul></div></li><li class='xr-section-item'><input id='section-c6053935-8b29-43db-aeb5-c8a241c6e5b1' class='xr-section-summary-in' type='checkbox' checked /><label for='section-c6053935-8b29-43db-aeb5-c8a241c6e5b1' class='xr-section-summary' title='Expand/collapse section'>Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-02-29 ... 2025-12-31T23:50:00</div><input id='attrs-a1e51886-539d-432c-9d60-b439c1487494' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a1e51886-539d-432c-9d60-b439c1487494' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-73d222a8-d529-45ac-85e9-e082f11aa9de' class='xr-var-data-in' type='checkbox'><label for='data-73d222a8-d529-45ac-85e9-e082f11aa9de' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2016-02-29T00:00:00.000000000&#x27;, &#x27;2016-02-29T00:10:00.000000000&#x27;,
        &#x27;2016-02-29T00:20:00.000000000&#x27;, ..., &#x27;2025-12-31T23:30:00.000000000&#x27;,
        &#x27;2025-12-31T23:40:00.000000000&#x27;, &#x27;2025-12-31T23:50:00.000000000&#x27;],
-      shape=(517536,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.941e+05 -3.936e+05 ... 4.694e+05</div><input id='attrs-800e4717-83b4-4e4a-9c2b-dca1692c4dd3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-800e4717-83b4-4e4a-9c2b-dca1692c4dd3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-43289889-976c-4b95-aba1-6514fbcc572c' class='xr-var-data-in' type='checkbox'><label for='data-43289889-976c-4b95-aba1-6514fbcc572c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-394118.987724, -393618.987724, -393118.987723, ...,  468381.012955,
-        468881.012956,  469381.012956], shape=(1728,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-4.221e+05 -4.216e+05 ... 5.694e+05</div><input id='attrs-1ac2b58e-89b5-4a77-ad79-a6d0b35bb7fa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1ac2b58e-89b5-4a77-ad79-a6d0b35bb7fa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6e825b6a-420d-49d4-b215-4c8ca385c71e' class='xr-var-data-in' type='checkbox'><label for='data-6e825b6a-420d-49d4-b215-4c8ca385c71e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-422114.801239, -421614.801239, -421114.801239, ...,  568385.19853 ,
-        568885.19853 ,  569385.19853 ], shape=(1984,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1728, 1984), meta=np.ndarray&gt;</div><input id='attrs-3404ce59-e707-4461-9555-b27206b8d011' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3404ce59-e707-4461-9555-b27206b8d011' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6f62d101-e2e0-4052-b1ed-cd127faae9fe' class='xr-var-data-in' type='checkbox'><label for='data-6f62d101-e2e0-4052-b1ed-cd127faae9fe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><table>
+      shape=(517536,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.941e+05 -3.936e+05 ... 4.694e+05</div><input id='attrs-51911cc9-202a-47a8-9820-e84b8a0619d0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-51911cc9-202a-47a8-9820-e84b8a0619d0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-015260fe-ab05-4dc7-8722-49b74775b507' class='xr-var-data-in' type='checkbox'><label for='data-015260fe-ab05-4dc7-8722-49b74775b507' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-394118.987724, -393618.987724, -393118.987723, ...,  468381.012955,
+        468881.012956,  469381.012956], shape=(1728,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-4.221e+05 -4.216e+05 ... 5.694e+05</div><input id='attrs-899f57a6-fb11-44df-bb5c-7c2ced270002' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-899f57a6-fb11-44df-bb5c-7c2ced270002' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0a4263c8-1bbc-4be4-af65-b2730dd001bc' class='xr-var-data-in' type='checkbox'><label for='data-0a4263c8-1bbc-4be4-af65-b2730dd001bc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-422114.801239, -421614.801239, -421114.801239, ...,  568385.19853 ,
+        568885.19853 ,  569385.19853 ], shape=(1984,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1728, 1984), meta=np.ndarray&gt;</div><input id='attrs-cd9dc69c-9a13-422f-84a1-4e3eddb3bc95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cd9dc69c-9a13-422f-84a1-4e3eddb3bc95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3fbaf9e6-77fb-4cfb-ba22-c57c3ebb80df' class='xr-var-data-in' type='checkbox'><label for='data-3fbaf9e6-77fb-4cfb-ba22-c57c3ebb80df' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1047,7 +1101,7 @@ Attributes:
 </svg>
         </td>
     </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1728, 1984), meta=np.ndarray&gt;</div><input id='attrs-bf9c4cd3-1cd8-43a1-88ef-5f38ab51a899' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bf9c4cd3-1cd8-43a1-88ef-5f38ab51a899' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a356669a-ec9a-4e0b-bc6d-96ff5111874c' class='xr-var-data-in' type='checkbox'><label for='data-a356669a-ec9a-4e0b-bc6d-96ff5111874c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1728, 1984), meta=np.ndarray&gt;</div><input id='attrs-b3498875-cde9-498f-853b-79bd51870c54' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b3498875-cde9-498f-853b-79bd51870c54' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d350102e-7c97-4140-9e89-1361b7482f8d' class='xr-var-data-in' type='checkbox'><label for='data-d350102e-7c97-4140-9e89-1361b7482f8d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1102,7 +1156,7 @@ Attributes:
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-56feff6a-9fdc-4a89-a75e-6725ed85bb1f' class='xr-section-summary-in' type='checkbox' checked /><label for='section-56feff6a-9fdc-4a89-a75e-6725ed85bb1f' class='xr-section-summary' title='Expand/collapse section'>Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>crs</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-492f660a-07e1-468a-8a1b-fdc0c34dc8b6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-492f660a-07e1-468a-8a1b-fdc0c34dc8b6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a63f5ec7-75da-42cf-ba15-dbb2b70f0a13' class='xr-var-data-in' type='checkbox'><label for='data-a63f5ec7-75da-42cf-ba15-dbb2b70f0a13' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;Unknown based on WGS 84 ellipsoid&quot;,ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,7030]]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8901]]],CONVERSION[&quot;unknown&quot;,METHOD[&quot;Stereographic&quot;],PARAMETER[&quot;Latitude of natural origin&quot;,56,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,10.5666,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,1,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],REMARK[&quot;PROJ CRS string: +proj=stere +ellps=WGS84 +lat_0=56 +lon_0=10.5666 +lat_ts=56&quot;], BBOX[52.15916120112653, 2.999999998212397, 60.21187595130615, 20.735140169999998]]</dd><dt><span>proj4 :</span></dt><dd>+proj=stere +ellps=WGS84 +lat_0=56 +lon_0=10.5666 +lat_ts=56</dd><dt><span>spatial_ref :</span></dt><dd>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;Unknown based on WGS 84 ellipsoid&quot;,ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,7030]]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8901]]],CONVERSION[&quot;unknown&quot;,METHOD[&quot;Stereographic&quot;],PARAMETER[&quot;Latitude of natural origin&quot;,56,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,10.5666,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,1,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],REMARK[&quot;PROJ CRS string: +proj=stere +ellps=WGS84 +lat_0=56 +lon_0=10.5666 +lat_ts=56&quot;]]</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>dbz</span></div><div class='xr-var-dims'>(time, y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 1728, 1984), meta=np.ndarray&gt;</div><input id='attrs-48dc0afa-d2d6-4d47-a117-23d181284923' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-48dc0afa-d2d6-4d47-a117-23d181284923' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7036b2ad-c39a-4e36-8013-222dc6eb9620' class='xr-var-data-in' type='checkbox'><label for='data-7036b2ad-c39a-4e36-8013-222dc6eb9620' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>10 min radar reflectivity</dd><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>units :</span></dt><dd>dBZ</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-c9182471-b3ab-429d-9517-fbcc36da2526' class='xr-section-summary-in' type='checkbox' checked /><label for='section-c9182471-b3ab-429d-9517-fbcc36da2526' class='xr-section-summary' title='Expand/collapse section'>Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>crs</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7beb85e7-85e7-4edd-ac2e-d7875ff1e14d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7beb85e7-85e7-4edd-ac2e-d7875ff1e14d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-355f9961-7cc8-4380-908e-ac13dfcf662b' class='xr-var-data-in' type='checkbox'><label for='data-355f9961-7cc8-4380-908e-ac13dfcf662b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;Unknown based on WGS 84 ellipsoid&quot;,ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,7030]]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8901]]],CONVERSION[&quot;unknown&quot;,METHOD[&quot;Stereographic&quot;],PARAMETER[&quot;Latitude of natural origin&quot;,56,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,10.5666,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,1,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],REMARK[&quot;PROJ CRS string: +proj=stere +ellps=WGS84 +lat_0=56 +lon_0=10.5666 +lat_ts=56&quot;], BBOX[52.15916120112653, 2.999999998212397, 60.21187595130615, 20.735140169999998]]</dd><dt><span>proj4 :</span></dt><dd>+proj=stere +ellps=WGS84 +lat_0=56 +lon_0=10.5666 +lat_ts=56</dd><dt><span>spatial_ref :</span></dt><dd>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;Unknown based on WGS 84 ellipsoid&quot;,ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,7030]]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8901]]],CONVERSION[&quot;unknown&quot;,METHOD[&quot;Stereographic&quot;],PARAMETER[&quot;Latitude of natural origin&quot;,56,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,10.5666,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,1,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1,ID[&quot;EPSG&quot;,9001]]],REMARK[&quot;PROJ CRS string: +proj=stere +ellps=WGS84 +lat_0=56 +lon_0=10.5666 +lat_ts=56&quot;]]</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>dbz</span></div><div class='xr-var-dims'>(time, y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 1728, 1984), meta=np.ndarray&gt;</div><input id='attrs-035a407c-ae4a-4c5d-9cd1-e1f876640c13' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-035a407c-ae4a-4c5d-9cd1-e1f876640c13' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1837cc5e-82b4-4dc3-bedb-0b6c8036a058' class='xr-var-data-in' type='checkbox'><label for='data-1837cc5e-82b4-4dc3-bedb-0b6c8036a058' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>10 min radar reflectivity</dd><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>units :</span></dt><dd>dBZ</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1216,11 +1270,11 @@ Attributes:
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-0c319727-a1ec-45f6-a656-4a9c907c26eb' class='xr-section-summary-in' type='checkbox' /><label for='section-0c319727-a1ec-45f6-a656-4a9c907c26eb' class='xr-section-summary' title='Expand/collapse section'>Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Author :</span></dt><dd>Thomas Bøvith (tbh@dmi.dk)</dd><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>consistent_timestep_start :</span></dt><dd>2016-02-29T00:00:00.000000000</dd><dt><span>institution :</span></dt><dd>Danmarks Meteorologiske Institute (DMI)</dd><dt><span>license :</span></dt><dd>CC-BY-4.0</dd><dt><span>mlcast_created_by :</span></dt><dd>Ricardo Jara &lt;arjj@dmi.dk&gt;</dd><dt><span>mlcast_created_on :</span></dt><dd>2026-02-24T09:00:17.521323</dd><dt><span>mlcast_created_with :</span></dt><dd>https://github.com/mlcast-community/mlcast-dataset-DMI-radar_precipitation@0.1.1</dd><dt><span>mlcast_dataset_identifier :</span></dt><dd>DK-DMI-precipitation</dd><dt><span>mlcast_dataset_version :</span></dt><dd>0.1.1</dd><dt><span>title :</span></dt><dd>radar-based precipitation</dd></dl></div></li></ul></div></div></div></div>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-0519708c-9a76-4368-b716-d5a427f29597' class='xr-section-summary-in' type='checkbox' /><label for='section-0519708c-9a76-4368-b716-d5a427f29597' class='xr-section-summary' title='Expand/collapse section'>Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Author :</span></dt><dd>Thomas Bøvith (tbh@dmi.dk)</dd><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>consistent_timestep_start :</span></dt><dd>2016-02-29T00:00:00.000000000</dd><dt><span>institution :</span></dt><dd>Danmarks Meteorologiske Institute (DMI)</dd><dt><span>license :</span></dt><dd>CC-BY-4.0</dd><dt><span>mlcast_created_by :</span></dt><dd>Ricardo Jara &lt;arjj@dmi.dk&gt;</dd><dt><span>mlcast_created_on :</span></dt><dd>2026-02-24T09:00:17.521323</dd><dt><span>mlcast_created_with :</span></dt><dd>https://github.com/mlcast-community/mlcast-dataset-DMI-radar_precipitation@0.1.1</dd><dt><span>mlcast_dataset_identifier :</span></dt><dd>DK-DMI-precipitation</dd><dt><span>mlcast_dataset_version :</span></dt><dd>0.1.1</dd><dt><span>title :</span></dt><dd>radar-based precipitation</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_name</span> <span class="o">=</span> <span class="s2">&quot;dbz&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_name</span> <span class="o">=</span> <span class="s2">"dbz"</span>
 
 <span class="n">crs_name</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span><span class="o">.</span><span class="n">grid_mapping</span>
 <span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Projection</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">crs_name</span><span class="p">]</span><span class="o">.</span><span class="n">crs_wkt</span><span class="p">)</span>
@@ -1232,13 +1286,13 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;2024-12-31&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"2024-12-31"</span><span class="p">)</span>
     <span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">transform</span><span class="o">=</span><span class="n">data_crs</span><span class="p">,</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">,</span>
         <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
+        <span class="n">col</span><span class="o">=</span><span class="s2">"time"</span><span class="p">,</span>
         <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">subplot_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">data_crs</span><span class="p">),</span>
     <span class="p">)</span>
@@ -1246,16 +1300,16 @@ Attributes:
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">"top"</span><span class="p">,</span> <span class="s2">"left"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2515/1860960605.py:15: FutureWarning: self.axes is deprecated since 2022.11 in order to align with matplotlibs plt.subplots, use self.axs instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2266/1860960605.py:15: FutureWarning: self.axes is deprecated since 2022.11 in order to align with matplotlibs plt.subplots, use self.axs instead.
   for ax in g.axes.flat:
 </pre></div>
 </div>
-<img alt="_images/37ce73c61bf5a957eacc663e62eedc98a560fb2e1b154a949486fb5310aeae91.png" src="_images/37ce73c61bf5a957eacc663e62eedc98a560fb2e1b154a949486fb5310aeae91.png" />
+<img alt="_images/7d8c7782ab510e20f96ec00cd21075b47455ce5360d40f24023b4507d4401f6c.png" src="_images/7d8c7782ab510e20f96ec00cd21075b47455ce5360d40f24023b4507d4401f6c.png" />
 </div>
 </div>
 </section>
@@ -1325,7 +1379,7 @@ Attributes:
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DMI - Radar reflectivity over Denmark</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dmi-10-min-reflectivity">DMI 10-min reflectivity</a></li>
 </ul>
@@ -1377,8 +1431,8 @@ By The MLCast Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
