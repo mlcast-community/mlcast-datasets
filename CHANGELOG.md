@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## unreleased
 
+### Added
+- Spanish Aemet rain radar 1 km Single site Zaragoza (2020-2024, 10min, 1km) [\#17](https://github.com/mlcast-community/mlcast-datasets/issues/45), @jaimecasari
+
 ### Documentation
 - Add step 7 to CONTRIBUTING.md requiring contributors to create and upload an example repository to mlcast-community, demonstrating how to download data from their organization, transform it into Zarr format, and request an invitation to join the community in order to publish their repository
 

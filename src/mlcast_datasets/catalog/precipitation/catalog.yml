@@ -63,6 +63,26 @@ sources:
         anon: true
         endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
 
+  es_aemet_ppi_zar_10_minutes:
+    description : "AEMET (Agencia Estatal de Meteorología) 10-Minute Zaragoza radar reflectivity data "
+    driver: zarr
+    args:
+      urlpath: "s3://mlcast-source-datasets/aemet/v0.1.1/aemet_ppi_10min_ZAR.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
+        endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
+  es_aemet_sri_zar_10_minutes:
+    description : "AEMET (Agencia Estatal de Meteorología) 10-Minute Zaragoza radar surface rainfall intensity (sri)"
+    driver: zarr
+    args:
+      urlpath: "s3://mlcast-source-datasets/aemet/v0.1.1/aemet_sri_10min_ZAR.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
+        endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
   fr_mf_prate_5min:
     description: "Météo-France 1 km radar rainfall amount dataset (mm*10^-2) converted in precipitation rate (mm/h)"
     driver: zarr
