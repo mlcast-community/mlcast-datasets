@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Documentation
 - Add step 7 to CONTRIBUTING.md requiring contributors to create and upload an example repository to mlcast-community, demonstrating how to download data from their organization, transform it into Zarr format, and request an invitation to join the community in order to publish their repository
 
+### Fixes
+- Adding the missing two attributes to the danish zarr dataset. [\#41](https://github.com/mlcast-community/mlcast-dataset-validator/pull/41). @arjj8
+
 ## [v0.3.0](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.3.0)
 
 This release includes a new radar precipitation dataset from Belgium, as well as the addition of JupyterBook build checks and live preview deployments to all pull requests to ensure that documentation changes are properly rendered and reviewed before being merged.
@@ -45,6 +48,9 @@ This release includes three new radar precipitation datasets from the UK, Denmar
 
 - Update DWD-DE-radklim dataset to `v0.1.1` that fixes meta-information to match mlcast-validator requirements and rename `RR` field to `rainfall_amount` to be consistent with the units and standard name used [\#33](https://github.com/mlcast-community/mlcast-datasets/pull/33), @leifdenby
 
+
+### Fixes
+- A bug that made non-detection values into nan was fixed in the DMI dataset [\#32](https://github.com/mlcast-community/mlcast-datasets/pull/32), @arjj8
 
 ## [v0.1.1](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.1.1) - 2025-01-03
 
