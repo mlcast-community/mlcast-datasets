@@ -33,6 +33,18 @@ Below follows a list of the general steps for preparing a new dataset for sharin
     ```
 
 4. Edit the catalog yaml-files to add your new dataset ([src/mlcast_datasets/catalog/](src/mlcast_datasets/catalog/). We haven't defined a strict structure for the catalog yet, but for now are going with `cat.{precipitation/radiation}.{dataset_name}`.
+   Each entry must set the [mlcast-dataset-validator](https://github.com/mlcast-community/mlcast-dataset-validator) version that the dataset conforms to in its `metadata`, for example:
+
+    ```yaml
+    my_dataset:
+      driver: zarr
+      metadata:
+        mlcast_dataset_validator_version: "0.3.0"
+      args:
+        ...
+    ```
+
+   This must match the `mlcast_dataset_validator_version` global attribute on the dataset itself (a dataset without this attribute is assumed to conform to v0.3.0), otherwise CI fails. CI validates each dataset against this version. If it matches the validator version pinned in the `ci` dependency group in `pyproject.toml`, the dataset is validated directly and you get a full report. Otherwise it's validated in an isolated environment with `uvx`, which only reports pass or fail.
 
 5. Create a Jupyter notebook in `docs/` that demonstrates how to use your dataset. This will become part of the automatically built [documentation of the mlcast dataset](https://mlcast-community.github.io/mlcast-datasets/). The notebook should include:
    - A description of the dataset

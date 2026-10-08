@@ -31,4 +31,4 @@ jobs:
         # so that it is available in the venv
         uv venv
         uv pip install -e .
-        uv run --all-groups python -m pytest -n 20 --timeout=300 -s src/mlcast_datasets
+        uv run --group ci python -m pytest -n 20 --timeout=300 -s src/mlcast_datasets

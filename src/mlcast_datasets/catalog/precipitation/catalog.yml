@@ -6,6 +6,8 @@ sources:
   radklim_hourly:
     description: "RADKLIM Hourly Precipitation Data from Deutscher Wetterdienst (DWD), hosted on ECMWF S3"
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/radklim/v0.1.1/hourly.zarr/"
       consolidated: true
@@ -16,6 +18,8 @@ sources:
   radklim_5_minutes:
     description: "RADKLIM 5-Minute Precipitation Data from Deutscher Wetterdienst (DWD), hosted on ECMWF S3"
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/radklim/v0.1.1/5_minutes.zarr/"
       consolidated: true
@@ -26,6 +30,8 @@ sources:
   dmi_10_minutes:
     description : "DMI (Danmarks Meteorologiske Institute) 10-Minute radar reflectivity data "
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/dmi/v0.1.2/dmi_10_minutes.zarr/"
       consolidated: true
@@ -36,6 +42,8 @@ sources:
   it_dpc_sri_5min:
     description: "Italian Radar Surface Rainfall Intensity (SRI) from Dipartimento Protezione Civile (DPC), hosted on ECMWF S3"
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/IT-DPC-SRI/v0.1.0/italian-radar-dpc-sri.zarr/"
       consolidated: true
@@ -46,6 +54,8 @@ sources:
   uk_metoffice_5min:
     description: "UK Met Office C-band rain radar 1 km composite (5-min, OSGB 1 km), hosted on ECMWF S3"
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/UK-METOFFICE-RADAR/v0.1.0/uk-metoffice-c-band-rain-radar.zarr/"
       consolidated: true
@@ -56,6 +66,8 @@ sources:
   be_rmi_radclim_mfb_5min:
     description: "RMI (Royal Meteorological Institute of Belgium) RADCLIM 1 km radar-rain-gauge merged rain rate with mean-field bias (MFB) correction (5-min, Belgian Lambert EPSG:3812), hosted on ECMWF S3"
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/radar_precipitation/BE-RMI-radclim-mfb/v0.1.1/5_minutes.zarr/"
       consolidated: true
@@ -66,6 +78,8 @@ sources:
   fr_mf_prate_5min:
     description: "Météo-France 1 km radar rainfall amount dataset (mm*10^-2) converted in precipitation rate (mm/h)"
     driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.3.0"
     args:
       urlpath: "s3://mlcast-source-datasets/FR-MF-prate/v0.1.0/fr-mf-prate-5min.zarr/"
       consolidated: true
