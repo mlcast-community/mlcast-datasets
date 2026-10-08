@@ -13,12 +13,17 @@ dependencies = [
     "ipykernel>=6.29.5",
     "jinja2>=3.1.6",
     "s3fs>=2025.0.0",
+    "xarray>=2025.1.0",
+    "zarr>=3.0.0",
 ]
 license = "Apache-2.0 OR BSD-3-Clause"
 license-files = [
     "LICENSE-APACHE",
     "LICENSE-BSD",
 ]
+
+[project.scripts]
+mlcast-datasets = "mlcast_datasets.cli:main"
 
 [dependency-groups]
 ci = [
@@ -62,3 +67,6 @@ mlcast_datasets = ["catalog/*.yaml", "catalog/**/*.yaml"]
 
 [tool.setuptools_scm]
 version_scheme = "post-release"
+
+[tool.isort]
+profile = "black"

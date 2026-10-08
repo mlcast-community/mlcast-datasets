@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## unreleased
 
 ### Added
+- `mlcast-datasets` command line tool: `list`, `info`, `download` (full copies, or time slices copied without re-encoding) and `path`, with a `--print-command` option for s5cmd, rclone and aws. `xarray` and `zarr` are now explicit dependencies. @franchg
 - Each catalog entry now records the `mlcast-dataset-validator` version that its dataset conforms to in `metadata.mlcast_dataset_validator_version`, set to v0.3.0 for all existing datasets. CI checks that this matches the dataset's own `mlcast_dataset_validator_version` attribute (assumed to be v0.3.0 when missing), and validates each dataset against that version: in-process when it matches the version pinned in `pyproject.toml`, otherwise in an isolated environment with `uvx` (pass/fail only). @leifdenby
 
 ### Changed
