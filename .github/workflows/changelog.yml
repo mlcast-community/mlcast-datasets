@@ -1,0 +1,36 @@
+### CI actions are pinned to immutable commit hashes, not mutable tags, to reduce supply-chain risk and help prevent LLM-based CI attacks. See https://github.com/lirantal/pypi-security-best-practices#13-secure-your-cicd-release-pipeline.
+name: changelog
+
+on:
+  pull_request:
+    # `labeled`/`unlabeled` re-run the check when the opt-out label is toggled.
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  changelog:
+    name: "CHANGELOG.md updated"
+    runs-on: ubuntu-latest
+    # PRs that don't need a changelog entry (CI, docs typos, etc.) can opt out
+    # with the `no changelog` label.
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'no changelog') }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+
+      # Compare against the merge base so commits added to the base branch after
+      # the PR was opened don't count as changes made by the PR.
+      - name: Check that CHANGELOG.md was modified
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -qxF 'CHANGELOG.md'; then
+            echo "CHANGELOG.md was updated."
+          else
+            echo "::error file=CHANGELOG.md::Please add an entry to CHANGELOG.md under 'unreleased', or add the 'no changelog' label if this PR doesn't need one."
+            exit 1
+          fi

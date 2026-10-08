@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixes
 - Adding the missing two attributes to the danish zarr dataset. [\#41](https://github.com/mlcast-community/mlcast-dataset-validator/pull/41). @arjj8
 
+### Maintenance
+- Add CI check that fails pull requests which don't update `CHANGELOG.md`; PRs that don't need an entry can opt out with the `no changelog` label [\#59](https://github.com/mlcast-community/mlcast-datasets/pull/59), @leifdenby
+
 ## [v0.3.0](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.3.0)
 
 This release includes a new radar precipitation dataset from Belgium, as well as the addition of JupyterBook build checks and live preview deployments to all pull requests to ensure that documentation changes are properly rendered and reviewed before being merged.
