@@ -21,6 +21,7 @@ import fsspec
 
 from .entries import DatasetEntry
 from .store import (
+    CONCURRENCY,
     TIME,
     StoreLayout,
     check_copyable,
@@ -287,7 +288,8 @@ def copy_command(entry: DatasetEntry, data_dir: str | Path, tool: str) -> str:
     anon = entry.storage_options.get("anon", False)
     dest = shlex.quote(str(local_path(entry, data_dir)))
     if tool == "s5cmd":
-        flags = " --no-sign-request" if anon else ""
+        flags = f" --numworkers {CONCURRENCY}"
+        flags += " --no-sign-request" if anon else ""
         flags += f" --endpoint-url {endpoint}" if endpoint else ""
         return f"s5cmd{flags} sync 's3://{remote}/*' {dest}/"
     if tool == "aws":
@@ -296,7 +298,8 @@ def copy_command(entry: DatasetEntry, data_dir: str | Path, tool: str) -> str:
         return f"aws s3 sync s3://{remote}/ {dest}/{flags}"
     if tool == "rclone":
         backend = ":s3,provider=Other" + (f",endpoint='{endpoint}'" if endpoint else "")
-        return f'rclone copy --transfers 32 --checkers 64 "{backend}:{remote}" {dest}'
+        n = CONCURRENCY
+        return f'rclone copy --transfers {n} --checkers {n} "{backend}:{remote}" {dest}'
     raise ValueError(f"Unknown tool '{tool}', expected one of {', '.join(COPY_TOOLS)}")
 
 

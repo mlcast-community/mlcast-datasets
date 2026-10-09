@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from math import ceil
 
 TIME = "time"
-CONCURRENCY = 64  # parallel requests to the object store
+CONCURRENCY = 32  # parallel requests to the object store
 SUMMARY_ATTRS = (
     "license",
     "mlcast_dataset_identifier",
@@ -161,10 +161,10 @@ def estimate_data_size(
 
 
 def s3_options(url: str, storage_options: dict | None) -> dict:
-    """Storage options with a larger S3 connection pool.
+    """Storage options with an S3 connection pool of ``CONCURRENCY``.
 
     The default pool of 10 connections caps small-object reads at about 170 per
-    second on the catalog's bucket; 64 is about five times faster.
+    second on the catalog's bucket.
     """
     options = dict(storage_options or {})
     if url.startswith("s3://"):

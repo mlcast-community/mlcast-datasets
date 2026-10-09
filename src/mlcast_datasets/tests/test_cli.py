@@ -132,7 +132,7 @@ def test_copy_commands():
         storage_options={"anon": True, "endpoint_url": "https://example.org"},
     )
     assert copy_command(entry, "data", "s5cmd") == (
-        "s5cmd --no-sign-request --endpoint-url https://example.org "
+        "s5cmd --numworkers 32 --no-sign-request --endpoint-url https://example.org "
         "sync 's3://bucket/a/x.zarr/*' data/bucket/a/x.zarr/"
     )
     assert copy_command(entry, "data", "aws") == (
@@ -140,7 +140,7 @@ def test_copy_commands():
         "--endpoint-url https://example.org --no-sign-request"
     )
     assert copy_command(entry, "data", "rclone") == (
-        "rclone copy --transfers 32 --checkers 64 "
+        "rclone copy --transfers 32 --checkers 32 "
         "\":s3,provider=Other,endpoint='https://example.org':bucket/a/x.zarr\" "
         "data/bucket/a/x.zarr"
     )
