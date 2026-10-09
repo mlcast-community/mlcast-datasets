@@ -172,7 +172,7 @@ def s3_options(url: str, storage_options: dict | None) -> dict:
     return options
 
 
-def open_dataset(url: str, storage_options: dict | None = None):
+def open_dataset(url: str, storage_options: dict | None = None, **kwargs):
     """Open a store lazily with xarray, from its consolidated metadata.
 
     zarr also sends at most 10 requests at a time by default, which makes
@@ -183,27 +183,32 @@ def open_dataset(url: str, storage_options: dict | None = None):
 
     options = s3_options(url, storage_options) or None
     with zarr.config.set({"async.concurrency": CONCURRENCY}):
-        return xr.open_zarr(url, storage_options=options, consolidated=True)
+        return xr.open_zarr(url, storage_options=options, consolidated=True, **kwargs)
 
 
 def summarize(url: str, storage_options: dict | None = None) -> dict:
-    """Time range, time step, grid, variables and key attributes of a store."""
+    """Time range, time step, grid, variables and key attributes of a store.
+
+    Reads only the start and the end of the time coordinate, which can be
+    thousands of objects (DMI: 3594).
+    """
     import numpy as np
     import pandas as pd
 
-    ds = open_dataset(url, storage_options)
-    times = ds.indexes[TIME]
+    ds = open_dataset(url, storage_options, create_default_indexes=False)
+    time = ds[TIME]
+    head = time[:1000].values  # enough steps to find the usual one
     step = None
-    if len(times) > 1:
-        diffs, counts = np.unique(np.diff(times.asi8), return_counts=True)
-        step = pd.Timedelta(int(diffs[counts.argmax()]))
+    if len(head) > 1:
+        diffs, counts = np.unique(np.diff(head), return_counts=True)
+        step = pd.Timedelta(diffs[counts.argmax()])
     data_vars = [v for v in ds.data_vars.values() if TIME in v.dims and v.ndim >= 3]
     spatial = [d for d in data_vars[0].dims if d != TIME] if data_vars else []
     return {
-        "time_start": times[0],
-        "time_end": times[-1],
+        "time_start": pd.Timestamp(head[0]),
+        "time_end": pd.Timestamp(time[-1].values),
         "time_step": step,
-        "n_times": len(times),
+        "n_times": time.size,
         "n_missing_times": ds.sizes.get("missing_times"),
         "grid": {d: ds.sizes[d] for d in spatial},
         "resolution_m": _resolution_m(ds),

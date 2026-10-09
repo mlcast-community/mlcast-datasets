@@ -8,6 +8,7 @@ import xarray as xr
 
 from mlcast_datasets import cli
 from mlcast_datasets.entries import DatasetEntry, get_entry, list_entries
+from mlcast_datasets.store import summarize
 from mlcast_datasets.transfer import (
     copy_command,
     copy_full,
@@ -41,7 +42,8 @@ def make_store(path, zarr_format, shards=None, chunks=(1, 6, 8)):
         },
         attrs={"license": "CC-BY-4.0", "mlcast_dataset_version": "0.1.0"},
     )
-    encoding = {"RR": {"chunks": chunks}}
+    # time coordinate in several chunks, as in DMI's store
+    encoding = {"RR": {"chunks": chunks}, "time": {"chunks": (4,)}}
     if shards:
         encoding["RR"]["shards"] = (shards, 6, 8)
     ds.to_zarr(path, zarr_format=zarr_format, encoding=encoding, consolidated=True)
@@ -123,6 +125,17 @@ def test_spatially_chunked_store_is_refused(tmp_path):
     _, entry = make_store(tmp_path / "tiled.zarr", 2, chunks=(1, 3, 8))
     with pytest.raises(ValueError, match="whole domain"):
         copy_full(entry, tmp_path / "data")
+
+
+def test_summarize(store):
+    _, entry, _ = store
+    s = summarize(entry.url)
+    assert (s["time_start"], s["time_end"]) == (TIMES[0], TIMES[-1])
+    assert s["time_step"] == pd.Timedelta("5min")
+    assert s["n_times"] == len(TIMES)
+    assert s["n_missing_times"] == 1
+    assert s["grid"] == {"y": 6, "x": 8}
+    assert s["resolution_m"] == 1000.0
 
 
 def test_copy_commands():

@@ -14,7 +14,7 @@ dependencies = [
     "jinja2>=3.1.6",
     "rich>=13",
     "s3fs>=2025.0.0",
-    "xarray>=2025.1.0",
+    "xarray>=2025.7.1",
     "zarr>=3.0.0",
 ]
 license = "Apache-2.0 OR BSD-3-Clause"
