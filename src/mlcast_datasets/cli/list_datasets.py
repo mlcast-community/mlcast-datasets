@@ -17,10 +17,11 @@ def add_arguments(parser) -> None:
 
 
 def run(args) -> int:
-    from rich import box
-    from rich.table import Table
+    from rich.markup import escape
     from rich.text import Text
+    from rich.tree import Tree
 
+    from .. import open_catalog
     from ..entries import list_entries
     from ..store import summarize
     from ._util import format_resolution, format_step
@@ -35,11 +36,11 @@ def run(args) -> int:
             "url": entry.url,
         }
         if args.details:
-            with console.status(f"🔍 Opening {entry.short_name}"):
+            with console.status(f"🔍 Opening {entry.name}"):
                 s = summarize(entry.url, entry.storage_options)
             row.update(
-                time_start=f"{s['time_start']:%Y-%m-%d}",
-                time_end=f"{s['time_end']:%Y-%m-%d}",
+                time_start=str(s["time_start"]),
+                time_end=str(s["time_end"]),
                 time_step=format_step(s["time_step"]),
                 n_times=s["n_times"],
                 grid=" × ".join(str(n) for n in s["grid"].values()),
@@ -51,30 +52,42 @@ def run(args) -> int:
         print(json.dumps(rows, indent=2))
         return 0
 
-    table = Table(
-        title="📚 mlcast catalog",
-        title_style="bold cyan",
-        box=box.SIMPLE_HEAD,
-        header_style="bold",
-        pad_edge=False,
-    )
-    columns = ["name", "validator"]
+    # one line per dataset, its columns aligned across the whole tree
+    cells = [[row["name"].rsplit(".", 1)[-1]] for row in rows]
     if args.details:
-        columns += ["start", "end", "step", "grid", "resolution"]
-    for column in columns:
-        table.add_column(
-            column, no_wrap=True, style="bold" if column == "name" else None
-        )
-    table.add_column("description")
-    for row in rows:
-        cells = [row["name"].rsplit(".", 1)[-1], row["validator_version"] or "-"]
-        if args.details:
-            cells += [
-                row[k]
-                for k in ("time_start", "time_end", "time_step", "grid", "resolution")
+        for row, row_cells in zip(rows, cells):
+            row_cells += [
+                f"{row['time_start'][:10]} → {row['time_end'][:10]}",
+                row["time_step"],
+                row["grid"],
+                row["resolution"],
             ]
-        # truncate rather than wrap long descriptions
-        description = Text(row["description"], no_wrap=True, overflow="ellipsis")
-        table.add_row(*cells, description)
-    console.print(table)
+    widths = [max(map(len, column)) for column in zip(*cells)]
+
+    catalog = open_catalog()
+    tree = Tree("[bold cyan]📚 mlcast catalog[/]")
+    nodes = {"": tree}
+
+    def node(path: str):
+        """Tree node of a sub-catalog, created along with its parents."""
+        if path not in nodes:
+            parent, _, label = path.rpartition(".")
+            description = " ".join((catalog[path].description or "").split())
+            nodes[path] = node(parent).add(
+                f"[bold]{label}[/]  [dim]{escape(description)}[/]"
+            )
+        return nodes[path]
+
+    for row, row_cells in zip(rows, cells):
+        line = "  ".join(c.ljust(w) for c, w in zip(row_cells, widths))
+        label = Text(line, no_wrap=True, overflow="ellipsis")
+        label.stylize("bold", 0, widths[0])
+        label.append(f"  {row['description']}", style="dim")
+        node(row["name"].rpartition(".")[0]).add(label)
+    console.print(tree)
+    if rows:
+        console.print(
+            f"[dim]Use the dotted path with the other commands, "
+            f"e.g. mlcast-datasets info {rows[0]['name']}[/]"
+        )
     return 0

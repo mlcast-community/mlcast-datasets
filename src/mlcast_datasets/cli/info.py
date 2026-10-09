@@ -32,7 +32,7 @@ def run(args) -> int:
     from .console import console
 
     entry = get_entry(args.name)
-    with console.status(f"🔍 Reading {entry.short_name}"):
+    with console.status(f"🔍 Reading {entry.name}"):
         summary = summarize(entry.url, entry.storage_options)
         fs, root = open_store(entry)
         layout = read_layout(fs, root)
@@ -119,5 +119,5 @@ def run(args) -> int:
     )
     info.add_row("URL", f"🔗  {entry.url}")
     info.add_row("Local copy", f"💾  {local}\n    [{state_style}]{state}[/]")
-    console.print(panel(info, f"📦 {entry.short_name}", subtitle=entry.name))
+    console.print(panel(info, f"📦 {entry.name}"))
     return 0

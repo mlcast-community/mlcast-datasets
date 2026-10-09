@@ -7,7 +7,12 @@ import pytest
 import xarray as xr
 
 from mlcast_datasets import cli
-from mlcast_datasets.entries import DatasetEntry, get_entry, list_entries
+from mlcast_datasets.entries import (
+    DatasetEntry,
+    DatasetNotFoundError,
+    get_entry,
+    list_entries,
+)
 from mlcast_datasets.store import summarize
 from mlcast_datasets.transfer import (
     copy_command,
@@ -163,9 +168,10 @@ def test_catalog_entries():
     entries = list_entries()
     assert entries
     assert all(e.url.startswith("s3://") and e.validator_version for e in entries)
-    entry = get_entry("it_dpc_sri_5min")
-    assert entry.name == "precipitation.it_dpc_sri_5min"
-    assert get_entry(entry.name) == entry
+    entry = get_entry("precipitation.it_dpc_sri_5min")
+    assert entry.url.startswith("s3://")
+    with pytest.raises(DatasetNotFoundError):
+        get_entry("it_dpc_sri_5min")  # names are dotted paths
 
 
 @pytest.fixture
@@ -177,16 +183,23 @@ def local_catalog(monkeypatch, tmp_path):
 
 def test_cli_download_and_path(local_catalog, tmp_path, capsys):
     data_dir = str(tmp_path / "data")
-    assert cli.main(["path", "radar", "--data-dir", data_dir]) == 0
+    assert cli.main(["path", "test.radar", "--data-dir", data_dir]) == 0
     assert capsys.readouterr().out.strip() == local_catalog.url
 
-    assert cli.main(["download", "radar", "--data-dir", data_dir]) == 0
+    assert cli.main(["download", "test.radar", "--data-dir", data_dir]) == 0
     capsys.readouterr()
-    assert cli.main(["path", "radar", "--data-dir", data_dir]) == 0
+    assert cli.main(["path", "test.radar", "--data-dir", data_dir]) == 0
     local = str(local_path(local_catalog, data_dir))
     assert capsys.readouterr().out.strip() == local
 
-    args = ["download", "radar", "--data-dir", data_dir, "--start", "2024-01-01T00:45"]
+    args = [
+        "download",
+        "test.radar",
+        "--data-dir",
+        data_dir,
+        "--start",
+        "2024-01-01T00:45",
+    ]
     assert cli.main(args) == 0
     assert (
         capsys.readouterr()
@@ -196,7 +209,7 @@ def test_cli_download_and_path(local_catalog, tmp_path, capsys):
 
 
 def test_cli_info_json(local_catalog, tmp_path, capsys):
-    assert cli.main(["info", "radar", "--data-dir", str(tmp_path), "--json"]) == 0
+    assert cli.main(["info", "test.radar", "--data-dir", str(tmp_path), "--json"]) == 0
     out = json.loads(capsys.readouterr().out)
     assert out["n_times"] == len(TIMES)
     assert out["n_missing_times"] == 1
@@ -209,6 +222,22 @@ def test_cli_list_json(capsys):
     assert cli.main(["list", "--json"]) == 0
     names = [row["name"] for row in json.loads(capsys.readouterr().out)]
     assert "precipitation.it_dpc_sri_5min" in names
+
+
+def test_cli_list_tree(monkeypatch, capsys):
+    summary = {
+        "time_start": pd.Timestamp("2020-01-01"),
+        "time_end": pd.Timestamp("2021-01-01"),
+        "time_step": pd.Timedelta("5min"),
+        "n_times": 10,
+        "grid": {"y": 2, "x": 3},
+        "resolution_m": 1000.0,
+    }
+    monkeypatch.setattr("mlcast_datasets.store.summarize", lambda *a: summary)
+    assert cli.main(["list", "--details"]) == 0
+    tree = capsys.readouterr().err
+    assert "precipitation" in tree and "it_dpc_sri_5min" in tree
+    assert "2020-01-01 → 2021-01-01  5 min  2 × 3  1 km" in tree
 
 
 def test_cli_unknown_dataset(local_catalog, capsys):

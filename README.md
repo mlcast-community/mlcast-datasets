@@ -60,13 +60,14 @@ cat = mlcast_datasets.open_catalog()
 Installing the package also installs the `mlcast-datasets` command:
 
 ```bash
-mlcast-datasets list                      # datasets in the catalog (--details for time range and grid)
-mlcast-datasets info it_dpc_sri_5min      # contents, storage layout, size, local copy
-mlcast-datasets download it_dpc_sri_5min  # full copy, resumable
-mlcast-datasets download it_dpc_sri_5min --start 2023-07-01 --end 2023-07-02  # time slice
-mlcast-datasets path it_dpc_sri_5min      # local copy if downloaded, else the S3 URL
+mlcast-datasets list                                    # catalog tree (--details for time range and grid)
+mlcast-datasets info precipitation.it_dpc_sri_5min      # contents, storage layout, size, local copy
+mlcast-datasets download precipitation.it_dpc_sri_5min  # full copy, resumable
+mlcast-datasets download precipitation.it_dpc_sri_5min --start 2023-07-01 --end 2023-07-02  # time slice
+mlcast-datasets path precipitation.it_dpc_sri_5min      # local copy if downloaded, else the S3 URL
 ```
 
+Datasets are named by their dotted path in the catalog tree.
 Copies go below `$MLCAST_DATA_DIR` (default `./data`), mirroring the S3 path, e.g.
 `data/mlcast-source-datasets/IT-DPC-SRI/v0.1.0/italian-radar-dpc-sri.zarr`.
 Chunks are copied as they are, never re-encoded. A time slice is a separate, shorter

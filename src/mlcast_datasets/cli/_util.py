@@ -11,7 +11,9 @@ from .console import console
 
 def add_name(parser) -> None:
     parser.add_argument(
-        "name", help="dataset name, e.g. it_dpc_sri_5min (see `mlcast-datasets list`)"
+        "name",
+        help="dotted path of the dataset in the catalog, "
+        "e.g. precipitation.it_dpc_sri_5min (see `mlcast-datasets list`)",
     )
 
 

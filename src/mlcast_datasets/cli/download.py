@@ -51,7 +51,7 @@ def run(args) -> int:
         print(copy_command(entry, data_dir(args), args.print_command))
         return 0
 
-    with console.status(f"🔍 Planning the copy of {entry.short_name}"):
+    with console.status(f"🔍 Planning the copy of {entry.name}"):
         if sliced:
             plan = plan_slice(entry, data_dir(args), args.start, args.end)
         else:
@@ -60,7 +60,7 @@ def run(args) -> int:
         raise FileExistsError(f"{plan.path} exists; pass --overwrite to replace it")
 
     info = grid()
-    info.add_row("Dataset", f"📦  {entry.short_name}")
+    info.add_row("Dataset", f"📦  {entry.name}")
     if sliced:
         to_copy = plan.est_bytes
         info.add_row(
