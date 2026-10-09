@@ -11,6 +11,7 @@ import json
 import os
 import shlex
 import shutil
+import warnings
 from collections.abc import Callable, Iterable, Iterator
 from dataclasses import dataclass
 from math import ceil
@@ -270,7 +271,11 @@ def copy_slice(
             for p in fs.find(f"{root}/{array.name}"):
                 _write(work / p[len(root) + 1 :], fs.cat(p))
 
-    zarr.consolidate_metadata(str(work))
+    with warnings.catch_warnings():
+        # zarr warns that consolidated metadata is not in the v3 spec; the
+        # catalog's v3 stores use it anyway
+        warnings.simplefilter("ignore", UserWarning)
+        zarr.consolidate_metadata(str(work))
     os.replace(work, dest)
     return result
 

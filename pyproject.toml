@@ -12,6 +12,7 @@ dependencies = [
     "intake-xarray>=2.0.0",
     "ipykernel>=6.29.5",
     "jinja2>=3.1.6",
+    "rich>=13",
     "s3fs>=2025.0.0",
     "xarray>=2025.1.0",
     "zarr>=3.0.0",
@@ -38,6 +39,7 @@ dev = [
     { include-group = "ci" },
     "ipdb>=0.13.13",
     "jinja2>=3.1.6",
+    "rich>=13",
     "pre-commit>=4.2.0",
     "sh>=2.2.2",
 ]

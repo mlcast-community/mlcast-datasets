@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from math import ceil
 
 TIME = "time"
+CONCURRENCY = 64  # parallel requests to the object store
 SUMMARY_ATTRS = (
     "license",
     "mlcast_dataset_identifier",
@@ -167,16 +168,22 @@ def s3_options(url: str, storage_options: dict | None) -> dict:
     """
     options = dict(storage_options or {})
     if url.startswith("s3://"):
-        options.setdefault("config_kwargs", {"max_pool_connections": 64})
+        options.setdefault("config_kwargs", {"max_pool_connections": CONCURRENCY})
     return options
 
 
 def open_dataset(url: str, storage_options: dict | None = None):
-    """Open a store lazily with xarray, from its consolidated metadata."""
+    """Open a store lazily with xarray, from its consolidated metadata.
+
+    zarr also sends at most 10 requests at a time by default, which makes
+    opening slow when the time coordinate has many chunks (DMI: 3594).
+    """
     import xarray as xr
+    import zarr
 
     options = s3_options(url, storage_options) or None
-    return xr.open_zarr(url, storage_options=options, consolidated=True)
+    with zarr.config.set({"async.concurrency": CONCURRENCY}):
+        return xr.open_zarr(url, storage_options=options, consolidated=True)
 
 
 def summarize(url: str, storage_options: dict | None = None) -> dict:

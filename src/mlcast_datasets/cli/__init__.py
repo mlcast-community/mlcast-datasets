@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import argparse
-import sys
+
+from rich.markup import escape
 
 from . import download, info, list_datasets, path
+from .console import console
 
 COMMANDS = {
     "list": list_datasets,
@@ -35,8 +37,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         return COMMANDS[args.command].run(args)
     except (DatasetNotFoundError, FileExistsError, ValueError) as e:
-        print(f"mlcast-datasets: error: {e}", file=sys.stderr)
+        console.print(f"[bold red]❌ {escape(str(e))}[/]", soft_wrap=True)
         return 1
     except KeyboardInterrupt:
-        print("\ninterrupted", file=sys.stderr)
+        console.print("[yellow]interrupted[/]")
         return 130
