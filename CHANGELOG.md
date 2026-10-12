@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - `mlcast-dataset-validator` is no longer a runtime dependency. It's now only in the `ci` dependency group, pinned to v0.3.0, and the `validation` dependency group has been removed. The `ci` group now holds just what the tests need, the `dev` group includes it, and the data availability check installs only the `ci` group. @leifdenby
+- Bump `mlcast-dataset-validator` pinned in the `ci` dependency group to v0.4.0. Existing datasets still conform to v0.3.0 and are validated against it with `uvx`. @leifdenby
 
 ### Documentation
 - Add step 7 to CONTRIBUTING.md requiring contributors to create and upload an example repository to mlcast-community, demonstrating how to download data from their organization, transform it into Zarr format, and request an invitation to join the community in order to publish their repository

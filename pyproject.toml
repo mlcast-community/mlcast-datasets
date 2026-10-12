@@ -23,7 +23,7 @@ license-files = [
 [dependency-groups]
 ci = [
     "loguru>=0.7.3",
-    "mlcast-dataset-validator==0.3.0",
+    "mlcast-dataset-validator==0.4.0",
     "packaging>=24.0",
     "pytest>=8.3.5",
     "pytest-timeout>=2.3.1",

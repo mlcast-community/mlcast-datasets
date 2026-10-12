@@ -39,7 +39,7 @@ Below follows a list of the general steps for preparing a new dataset for sharin
     my_dataset:
       driver: zarr
       metadata:
-        mlcast_dataset_validator_version: "0.3.0"
+        mlcast_dataset_validator_version: "0.4.0"
       args:
         ...
     ```
