@@ -9,4 +9,5 @@ chapters:
 - file: it_dpc_precipitation
 - file: uk_metoffice_precipitation
 - file: be_rmi_precipitation
+- file: es_aemet_precipitation
 - file: fr_mf_precipitation
