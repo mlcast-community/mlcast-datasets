@@ -86,3 +86,14 @@ sources:
       storage_options:
         anon: true
         endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
+  fi_fmi_dbz_5min:
+    description: "FMI (Finnish Meteorological Institute) 5-minute radar reflectivity data"
+    driver: zarr
+    metadata:
+      mlcast_dataset_validator_version: "0.4.0"
+    args:
+      urlpath: "s3://fmi-opendata-radar-datasets/reflectivity/0.1.0/fi-fmi-dbz-5min.zarr/fi-fmi-dbz-5min.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
