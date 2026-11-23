@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Each catalog entry now records the `mlcast-dataset-validator` version that its dataset conforms to in `metadata.mlcast_dataset_validator_version`, set to v0.3.0 for all existing datasets. CI checks that this matches the dataset's own `mlcast_dataset_validator_version` attribute (assumed to be v0.3.0 when missing), and validates each dataset against that version: in-process when it matches the version pinned in `pyproject.toml`, otherwise in an isolated environment with `uvx` (pass/fail only). @leifdenby
 
+- Finnish radar precipitation dataset covering 2008-2026 at 5min, 1km resolution [\#64](https://github.com/mlcast-community/mlcast-datasets/issues/64). @juhi24 @karjaljo @ritvje
+
 ### Changed
 - `mlcast-dataset-validator` is no longer a runtime dependency. It's now only in the `ci` dependency group, pinned to v0.3.0, and the `validation` dependency group has been removed. The `ci` group now holds just what the tests need, the `dev` group includes it, and the data availability check installs only the `ci` group. @leifdenby
 
