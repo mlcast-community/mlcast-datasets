@@ -10,3 +10,4 @@ chapters:
 - file: uk_metoffice_precipitation
 - file: be_rmi_precipitation
 - file: fr_mf_precipitation
+- file: fmi_dbz
